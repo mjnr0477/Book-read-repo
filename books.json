@@ -68,11 +68,18 @@
         "price": "See store",
         "url": "https://www.booktopia.com.au/fast-easy-simple-and-first-million-dollars-mathias-simiyu/book/9798233964442.html",
         "isbn": "9798233964442"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Jarir Bookstore",
+        "price": "See store",
+        "url": "https://www.jarir.com/sa-en/fast-easy-simple-and-first-million-dollars-9798233964442.html",
+        "isbn": "9798233964442"
       }
     ],
     "isbn": "9798233964442",
     "description": "A practical look at money, opportunity and the market, encouraging readers to shift their thinking, create value and take consistent steps toward financial growth.",
-    "coverUrl": "https://images-us.bookshop.org/ingram/9798233964442.jpg?v=b51fd8af1028adf83a1a743c39da5733&width=600"
+    "coverUrl": "https://ak-asset.jarir.com/akeneo-prod/asset/ingram/e/a/b/5/eab507b1fc8db3a70ff34d344041cfa9e5e13032_9798233964442.jpg"
   },
   {
     "id": "fulfill-your-purpose",
@@ -108,11 +115,18 @@
         "price": "See store",
         "url": "https://bookshop.org/p/books/fulfill-your-purpose-mathias-simiyu/57a58c4a140a2026?ean=9798249826772",
         "isbn": "9798249826772"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Jarir Bookstore",
+        "price": "See store",
+        "url": "https://www.jarir.com/sa-en/fulfill-your-purpose-9798224138630.html",
+        "isbn": "9798224138630"
       }
     ],
     "isbn": "9798224138630",
     "description": "A philosophical exploration of purpose, identity and inner alignment, using a fisherman's story to examine how removing inner division can clarify the life a person builds.",
-    "coverUrl": "https://cdn.kobo.com/book-images/b07d2c17-1da7-49d3-87a3-88ac1384bbff/1200/1200/False/fulfill-your-purpose.jpg"
+    "coverUrl": "https://ak-asset.jarir.com/akeneo-prod/asset/ingram/7/f/6/c/7f6c3bddf6407f7eb06eb8ec7fd146f2b9663d3e_9798224138630.jpg"
   },
   {
     "id": "football",
@@ -171,7 +185,8 @@
       }
     ],
     "isbn": "9798232146900",
-    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232146900/4393/football.jpg"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232146900/4393/football.jpg",
+    "description": "A short reflection on football as a test of patience, composure, decisiveness and possession, arguing that these qualities can decide a match before it begins."
   },
   {
     "id": "education-is-not-the-key",
@@ -232,6 +247,14 @@
         "price": "See store",
         "url": "https://booktopia.com.au/last-book-mathias-simiyu/book/9798235950887.html",
         "isbn": "9798235950887"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Amazon India",
+        "price": "See store",
+        "url": "https://www.amazon.in/Last-Book-Mathias-Simiyu/dp/B0H7TNFGDB",
+        "isbn": "9798235950887",
+        "asin": "B0H7TNFGDB"
       }
     ],
     "isbn": "9798235950887",
@@ -239,7 +262,7 @@
       "https://books2read.com/u/8DkMpZ"
     ],
     "description": "A reflection on the point at which advice and other people's experiences must give way to personal choices, responsibility and a path of one's own.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/8DkMpZ"
+    "coverUrl": "https://images-us.bookshop.org/ingram/9798235950887.jpg?v=edb4711a6ea2f09a38fec7d3d26dcf83&width=600"
   },
   {
     "id": "won-in-mind",
@@ -268,6 +291,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232953423/Won-Mind-Simiyu-Mathias/plp",
         "isbn": "9798232953423"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Barnes & Noble",
+        "price": "See store",
+        "url": "https://www.barnesandnoble.com/w/won-in-mind-mathias-simiyu/1148601464",
+        "isbn": "9798232953423"
       }
     ],
     "isbn": "9798232953423",
@@ -275,7 +305,7 @@
       "https://books2read.com/u/0zYVLP"
     ],
     "description": "Encourages readers to think beyond immediate pleasure, protect their future and build something lasting through deliberate choices.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/0zYVLP"
+    "coverUrl": "https://cdn.shopify.com/s/files/1/0674/5433/7265/files/9798232953423_p0.jpg?v=1774959349"
   },
   {
     "id": "beyond-labels",
@@ -311,6 +341,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798233250552/Beyond-Labels-Simiyu-Mathias/plp",
         "isbn": "9798233250552"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/beyond-labels-mathias-simiyu/book/9798233250552.html",
+        "isbn": "9798233250552"
       }
     ],
     "isbn": "9798233250552",
@@ -318,7 +355,7 @@
       "https://books2read.com/u/QZ2Ko7"
     ],
     "description": "Explores how guilt, fear, identity and social expectations can become mental constraints, and considers how honesty and self-understanding can help readers live more freely.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/QZ2Ko7"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798233250552/3285/beyond-labels.jpg"
   },
   {
     "id": "silent-master",
@@ -347,6 +384,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232291518/Silent-Master-Simiyu-Mathias/plp",
         "isbn": "9798232291518"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/silent-master-mathias-simiyu/book/9798232291518.html",
+        "isbn": "9798232291518"
       }
     ],
     "isbn": "9798232291518",
@@ -354,7 +398,7 @@
       "https://books2read.com/u/ZwxjM2"
     ],
     "description": "Examines how machines and technology can quietly replace human effort, reshape society and shift the balance of control and freedom.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/ZwxjM2"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232291518/5609/silent-master.jpg"
   },
   {
     "id": "love-triangle",
@@ -376,6 +420,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798235147836/Love-Triangle-Simiyu-Mathias/plp",
         "isbn": "9798235147836"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/love-triangle-mathias-simiyu/book/9798235147836.html",
+        "isbn": "9798235147836"
       }
     ],
     "isbn": "9798235147836",
@@ -383,7 +434,7 @@
       "https://books2read.com/u/LragO0"
     ],
     "description": "A relationship story of love, loss and unexpected connection, as Cate, David and Mathias confront changing feelings and the consequences of their choices.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/LragO0"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798235147836/0000/love-triangle.jpg"
   },
   {
     "id": "optional-death",
@@ -448,6 +499,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798224736928/Naked-Species-Simiyu-Mathias/plp",
         "isbn": "9798224736928"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Indigo",
+        "price": "See store",
+        "url": "https://www.indigo.ca/products/the-naked-species-1",
+        "isbn": "9798224736928"
       }
     ],
     "isbn": "9798224736928",
@@ -455,7 +513,7 @@
       "https://books2read.com/u/RB9KMv"
     ],
     "description": "A call to look beyond status, consumerism and digital distraction, and to approach life with greater honesty, attention and purpose.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/RB9KMv"
+    "coverUrl": "https://www.indigo.ca/cdn/shop/files/1_ce56b7fb-06a2-4835-ac9c-4b5be72aa9db.jpg?v=1778006656"
   },
   {
     "id": "brain-code-patternode",
@@ -498,11 +556,18 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798233431555/Brain-Code-Patternode-Msjnr-Simiyu/plp",
         "isbn": "9798233431555"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/brain-code-patternode-mathias-simiyu/a432613c4bff8591?ean=9798233431555",
+        "isbn": "9798233431555"
       }
     ],
     "isbn": "9798233431555",
     "description": "Explores recurring mental and social patterns—from memory loops to language and influence—and offers ways to recognize habits that shape behaviour and make more deliberate choices.",
-    "coverUrl": "https://www.indigo.ca/cdn/shop/files/image_680c08e9-275f-4591-8a70-1271fdb20253.jpg?v=1770307317"
+    "coverUrl": "https://images-us.bookshop.org/ingram/9798233431555.jpg?v=b13241b2314dfa812f0664e69f62e195&width=600"
   },
   {
     "id": "seduction",
@@ -524,6 +589,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232918507/Seduction-Simiyu-Mathias/plp",
         "isbn": "9798232918507"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/seduction-mathias-simiyu/book/9798232918507.html",
+        "isbn": "9798232918507"
       }
     ],
     "isbn": "9798232918507",
@@ -532,7 +604,7 @@
       "https://books2read.com/u/V7jKx5"
     ],
     "description": "Explores the psychology of attraction, influence and human connection, including the subtle dynamics that shape how people perceive and respond to one another.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/WKjdqx"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232918507/6096/seduction.jpg"
   },
   {
     "id": "stay-awake",
@@ -568,6 +640,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232441678/Stay-Awake-Mathias-Simiyu/plp",
         "isbn": "9798232441678"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/stay-awake-mathias-simiyu/book/9798232441678.html",
+        "isbn": "9798232441678"
       }
     ],
     "isbn": "9798232441678",
@@ -575,7 +654,7 @@
       "https://books2read.com/u/lKZWgB"
     ],
     "description": "Invites readers to question the masks they wear, see the world more clearly and move toward a more authentic sense of self.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/lKZWgB"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232441678/2510/stay-awake.jpg"
   },
   {
     "id": "the-environment-shape-you",
@@ -611,6 +690,13 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232606947/Environment-Shape-Simiyu-Mathias/plp",
         "isbn": "9798232606947"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/the-environment-shape-you-mathias-simiyu/book/9798232606947.html",
+        "isbn": "9798232606947"
       }
     ],
     "isbn": "9798232606947",
@@ -618,7 +704,7 @@
       "https://books2read.com/u/vYrZwJ"
     ],
     "description": "Argues that the people and surroundings around us strongly influence behaviour, and encourages readers to shape their environment to support the life they want.",
-    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/vYrZwJ"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232606947/4408/the-environment-shape-you.jpg"
   },
   {
     "id": "before-you-call-her-wife",
@@ -687,11 +773,18 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232649609/Money-Simiyu-Mathias/plp",
         "isbn": "9798232649609"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/money-mathias-simiyu/book/9798232649609.html",
+        "isbn": "9798232649609"
       }
     ],
     "isbn": "9798232649609",
     "description": "A concise reflection on money as a tool: understanding how to manage it deliberately rather than allowing it to control one's choices.",
-    "coverUrl": "https://image.yes24.com/goods/156238726/xl"
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232649609/6409/money.jpg"
   },
   {
     "id": "humanity-outweigh-materialism",
@@ -884,11 +977,18 @@
         "price": "See store",
         "url": "https://www.barnesandnoble.com/w/beyond-dimensions-mathias-simiyu/1148711478",
         "isbn": "9798232923693"
+      },
+      {
+        "format": "eBook",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/beyond-dimensions-mathias-simiyu/ebook/9798232735197.html",
+        "isbn": "9798232735197"
       }
     ],
     "isbn": "9798232923693",
-    "description": "A philosophical reflection on perception, dimensions and the idea that reality may extend beyond the way people ordinarily interpret it.",
-    "coverUrl": "https://cdn.shopify.com/s/files/1/0674/5433/7265/files/9798232923693_p0.jpg?v=1765356414"
+    "description": "A philosophical meditation on perception and reality, proposing that what we see as dimensions may be only a limited view of matter and energy in motion.",
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232735197/5126/beyond-dimensions.jpg"
   },
   {
     "id": "men-resist-death",
@@ -951,12 +1051,22 @@
       },
       {
         "format": "Kindle eBook",
-        "retailer": "Amazon",
+        "retailer": "Amazon Australia",
         "price": "See store",
-        "url": "https://www.amazon.com/dp/B0FVFQK961",
+        "url": "https://www.amazon.com.au/Sell-Without-Selling-Mathias-Simiyu-ebook/dp/B0FVFQK961",
         "asin": "B0FVFQK961"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Amazon Singapore",
+        "price": "See store",
+        "url": "https://www.amazon.sg/Sell-Without-Selling-Mathias-Simiyu/dp/B0FW4FCKS8",
+        "isbn": "9798269664804",
+        "asin": "B0FW4FCKS8"
       }
-    ]
+    ],
+    "description": "Explores persuasion and scarcity as practical parts of selling, and argues that effective marketing starts with self-belief and making customers feel understood rather than treating a sale as a simple exchange.",
+    "coverUrl": "https://m.media-amazon.com/images/I/61BK5u5fOmL._SL1293_.jpg"
   },
   {
     "id": "youre-not-falling-behind",
@@ -964,14 +1074,13 @@
     "category": "Personal development",
     "cover": "blue",
     "status": "available",
-    "description": "A practical guide for readers who feel overwhelmed by adult responsibilities, early career decisions or the pressure to have life figured out, with simple systems for managing time, money and energy.",
     "editions": [
       {
         "format": "Kindle eBook",
-        "retailer": "Amazon",
+        "retailer": "Amazon Brazil",
         "price": "See store",
-        "url": "https://www.amazon.com/Youre-Not-Falling-Behind-Practical-ebook/dp/B0GLTLZ4NQ",
-        "asin": "B0GLTLZ4NQ"
+        "url": "https://www.amazon.com.br/Youre-Not-Falling-Behind-English-ebook/dp/B0GJ5V7MBM",
+        "asin": "B0GJ5V7MBM"
       }
     ]
   }

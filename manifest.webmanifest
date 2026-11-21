@@ -1,0 +1,10 @@
+{
+  "name": "Book Read",
+  "short_name": "Book Read",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#10131c",
+  "theme_color": "#10131c",
+  "description": "Discover books and choose your preferred bookstore.",
+  "icons": []
+}

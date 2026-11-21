@@ -8,6 +8,32 @@ let books=[];
 let activeFilter="all";
 let selectedFormat="all";
 
+/* Warm a retailer's connection before the user opens it. This never changes
+   the destination URL or delays the browser's normal link navigation. */
+const warmedStoreOrigins=new Set();
+function warmStoreLink(anchor){
+ if(!anchor||!anchor.href)return;
+ let destination;
+ try{destination=new URL(anchor.href,location.href)}catch{return}
+ if(destination.protocol!=="https:"||destination.origin===location.origin||warmedStoreOrigins.has(destination.origin))return;
+ warmedStoreOrigins.add(destination.origin);
+ const dns=document.createElement("link");
+ dns.rel="dns-prefetch";
+ dns.href="//"+destination.hostname;
+ document.head.appendChild(dns);
+ const connection=document.createElement("link");
+ connection.rel="preconnect";
+ connection.href=destination.origin;
+ document.head.appendChild(connection);
+}
+["pointerover","pointerdown","touchstart","focusin"].forEach(type=>{
+ dialogContent.addEventListener(type,event=>{
+  const link=event.target.closest?.('a[target="_blank"]');
+  if(link)warmStoreLink(link);
+ },{passive:true});
+});
+
+
 // Retailer search destinations are fallbacks, not claims that a specific edition is in stock.
 const retailers=[
  {name:"Amazon US",formats:["ebook","paperback","hardcover"],search:q=>"https://www.amazon.com/s?k="+q},

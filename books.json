@@ -40,7 +40,8 @@
         "price": "See store",
         "url": "https://www.thenile.com.au/books/mathias-simiyu/fast-easy-simple-and-first-million-dollars/9798233964442"
       }
-    ]
+    ],
+    "isbn": "9798233964442"
   },
   {
     "id": "fulfill-your-purpose",
@@ -100,7 +101,8 @@
         "price": "See store",
         "url": "https://www.foyles.co.uk/book/last-book/mathias-simiyu/9798235950887"
       }
-    ]
+    ],
+    "isbn": "9798235950887"
   },
   {
     "id": "won-in-mind",
@@ -115,7 +117,8 @@
         "price": "See store",
         "url": "https://www.thenile.com.au/books/mathias-simiyu/won-in-mind/9798232953423"
       }
-    ]
+    ],
+    "isbn": "9798232953423"
   },
   {
     "id": "beyond-labels",
@@ -145,7 +148,8 @@
         "price": "See store",
         "url": "https://www.readings.com.au/product/9798232291518/silent-master--mathias-simiyu--2025--9798232291518"
       }
-    ]
+    ],
+    "isbn": "9798232291518"
   },
   {
     "id": "love-triangle",
@@ -175,7 +179,8 @@
         "price": "See store",
         "url": "https://www.readings.com.au/product/9798232496937/optional-death--mathias-simiyu--2025--9798232496937"
       }
-    ]
+    ],
+    "isbn": "9798232496937"
   },
   {
     "id": "the-naked-species",
@@ -196,7 +201,8 @@
         "price": "See store",
         "url": "https://usa.kinokuniya.com/ja/products/9798224736928"
       }
-    ]
+    ],
+    "isbn": "9798224736928"
   },
   {
     "id": "brain-code-patternode",
@@ -232,7 +238,8 @@
         "price": "See store",
         "url": "https://www.hatchards.co.uk/book/seduction/mathias-simiyu/9798232918507"
       }
-    ]
+    ],
+    "isbn": "9798232918507"
   },
   {
     "id": "stay-awake",
@@ -253,7 +260,8 @@
         "price": "See store",
         "url": "https://www.readings.com.au/product/9798232441678/stay-awake--mathias-simiyu--2025--9798232441678"
       }
-    ]
+    ],
+    "isbn": "9798232441678"
   },
   {
     "id": "the-environment-shape-you",
@@ -274,7 +282,8 @@
         "price": "See store",
         "url": "https://books.rakuten.co.jp/rk/97479f2e2bf432db9b8d01411292bb44/"
       }
-    ]
+    ],
+    "isbn": "9798232606947"
   },
   {
     "id": "before-you-call-her-wife",
@@ -295,7 +304,8 @@
         "price": "See store",
         "url": "https://books.rakuten.co.jp/rk/628985110f7031bfa0367ce01451d39a/"
       }
-    ]
+    ],
+    "isbn": "9798232932794"
   },
   {
     "id": "money",
@@ -310,7 +320,8 @@
         "price": "See store",
         "url": "https://www.hatchards.co.uk/book/money/mathias-simiyu/9798232649609"
       }
-    ]
+    ],
+    "isbn": "9798232649609"
   },
   {
     "id": "humanity-outweigh-materialism",
@@ -325,7 +336,8 @@
         "price": "See store",
         "url": "https://www.readings.com.au/product/9798232109547/humanity-outweigh-materialism--mathias-simiyu--2025--9798232109547"
       }
-    ]
+    ],
+    "isbn": "9798232109547"
   },
   {
     "id": "break-the-chain",
@@ -340,7 +352,8 @@
         "price": "See store",
         "url": "https://tertulia.com/book/break-the-chain-mathias-simiyu/9798232421656"
       }
-    ]
+    ],
+    "isbn": "9798232421656"
   },
   {
     "id": "new-world",
@@ -355,7 +368,8 @@
         "price": "See store",
         "url": "https://www.readings.com.au/product/9798232676568/new-world--mathias-simiyu--2025--9798232676568"
       }
-    ]
+    ],
+    "isbn": "9798232676568"
   },
   {
     "id": "beyond-dimensions",
@@ -370,7 +384,8 @@
         "price": "See store",
         "url": "https://www.readings.com.au/product/9798232923693/beyond-dimensions--mathias-simiyu--2025--9798232923693"
       }
-    ]
+    ],
+    "isbn": "9798232923693"
   },
   {
     "id": "men-resist-death",
@@ -385,6 +400,7 @@
         "price": "See store",
         "url": "https://www.foyles.co.uk/book/men-resist-death/mathias-simiyu/9798232535278"
       }
-    ]
+    ],
+    "isbn": "9798232535278"
   }
 ]

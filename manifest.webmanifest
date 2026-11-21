@@ -5,6 +5,13 @@
   "display": "standalone",
   "background_color": "#10131c",
   "theme_color": "#10131c",
-  "description": "Discover books and choose your preferred bookstore.",
-  "icons": []
+  "description": "Browse books with real cover art, compare editions and open the bookstore you choose.",
+  "icons": [
+    {
+      "src": "./book-read-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }

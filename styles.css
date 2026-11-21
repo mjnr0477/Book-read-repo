@@ -9,3 +9,38 @@
 .select-note{font-size:11px;line-height:1.6;color:#c6ad7d;margin-top:17px;border-left:2px solid var(--accent);padding-left:11px}
 .edition a:focus-visible,.format-button:focus-visible,.book-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(max-width:480px){.book-dialog{padding:23px 18px}.edition{padding:11px;gap:8px}.edition a{font-size:10px;padding:8px}.format-button{flex:1;min-width:calc(50% - 7px)}}
+
+/* Real retailer jacket art */
+.cover.has-cover{background:#e8e4dc;padding:7px;display:flex;align-items:center;justify-content:center}
+.cover-image{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 4px 8px rgba(0,0,0,.14))}
+.cover-fallback{font:700 18px/1.2 Georgia,serif;color:#242733;text-align:center;padding:12px}
+.hero-covers{position:relative;width:290px;height:310px;display:block;z-index:1}
+.hero-cover{position:absolute;top:38px;left:55px;width:168px;height:232px;padding:6px;background:#ece7de;border-radius:3px;box-shadow:0 18px 36px rgba(0,0,0,.38);overflow:hidden}
+.hero-cover img{display:block;width:100%;height:100%;object-fit:contain}
+.hero-cover-0{transform:rotate(-12deg) translate(-30px,13px);z-index:1}
+.hero-cover-1{transform:rotate(9deg) translate(38px,5px);z-index:2}
+.hero-cover-2{transform:rotate(-1deg) translate(7px,-13px);z-index:3}
+.hero-cover-fallback{display:grid;place-items:center;height:100%;padding:10px;text-align:center;color:#252833;font:700 17px/1.2 Georgia,serif}
+.dialog-book-intro{display:grid;grid-template-columns:125px minmax(0,1fr);gap:20px;align-items:start;margin:12px 0 18px}
+.dialog-cover-frame{min-height:160px;height:180px;background:#e9e5dc;border-radius:4px;display:grid;place-items:center;padding:5px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,.22)}
+.dialog-cover-image{width:100%;height:100%;object-fit:contain}
+.dialog-cover-placeholder{font:700 17px/1.2 Georgia,serif;text-align:center;color:#242733;padding:12px}
+.dialog-cover-fallback{font:700 16px/1.2 Georgia,serif;color:#242733;text-align:center;padding:10px}
+.dialog-book-copy .eyebrow{margin:0 0 10px}
+.dialog-book-copy .dialog-title{margin:0 0 10px;font-size:25px}
+.dialog-book-copy .dialog-description{margin:0}
+.universal-store-link{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px}
+.universal-store-link a{display:inline-flex;align-items:center;background:#d8b779;color:#171923;padding:10px 13px;border-radius:4px;font-size:11px;font-weight:750}
+.universal-store-link small{flex-basis:100%;color:#a8adba;font-size:10px}
+.search-box input{font:inherit;font-size:13px}
+@media(max-width:760px){
+ .hero-covers{transform:scale(.9);margin:0 auto}
+ .dialog-book-intro{grid-template-columns:100px minmax(0,1fr);gap:14px}
+ .dialog-cover-frame{height:150px;min-height:150px}
+ .dialog-book-copy .dialog-title{font-size:21px}
+}
+@media(max-width:420px){
+ .hero-covers{transform:scale(.82);margin:-15px auto}
+ .dialog-book-intro{grid-template-columns:84px minmax(0,1fr);gap:11px}
+ .dialog-cover-frame{height:130px;min-height:130px}
+}

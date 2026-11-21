@@ -83,9 +83,9 @@ function renderRetailers(book){
  const formats=selectedFormat==="all"?["ebook","paperback","hardcover"]:[selectedFormat];
  const entries=[];
  for(const format of formats){
-  const available=retailers.filter(store=>store.formats.includes(format)&&(!((book.id==="architecture-human-nature")&&format==="ebook")||store.name==="Amazon"));
+  const available=retailers.filter(store=>store.formats.includes(format)&&(!((book.id==="architecture-human-nature")&&format==="ebook")||store.name.startsWith("Amazon")));
   for(const store of available){
-   const query=encodeURIComponent(book.title+" "+(book.author||""));
+   const query=encodeURIComponent(book.title);
    entries.push({name:store.name,format,url:store.search?store.search(query):store.home,searchable:!!store.search});
   }
  }

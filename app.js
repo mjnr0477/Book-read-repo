@@ -51,8 +51,7 @@ function openBook(id){
  selectedFormat="all";
  const editions=book.editions||[];
  const isSelectExclusive=book.id==="architecture-human-nature";
- const direct=editions.filter(e=>selectedFormat==="all"||formatForEdition(e)===selectedFormat);
- const directHtml=direct.length?`<h3 class="store-search-heading">Confirmed edition links supplied for this title</h3><div class="edition-list">${direct.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price||"See store")}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></div>`).join("")}</div>`:`<p class="pending-note">No direct listing for this format is recorded yet. Use the retailer searches below to check current availability.</p>`;
+ const directHtml=`<h3 class="store-search-heading">Direct retailer listings</h3><div class="edition-list" id="direct-editions"></div>`;
  dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"Explore available editions and check each retailer for current price, format and delivery options.")}</p>${directHtml}<h3 class="store-search-heading">Shop this title by format</h3><div class="format-tabs" role="group" aria-label="Choose book format">${Object.entries(formatNames).map(([key,label])=>`<button type="button" class="format-button ${key==="all"?"active":""}" data-format="${key}">${label}</button>`).join("")}</div><p class="store-search-note" id="format-note">Choose a retailer to check its current listing. Search links do not guarantee stock or availability.</p><div class="edition-list" id="retailer-results"></div>${isSelectExclusive?'<p class="select-note">This eBook is enrolled in Kindle Select. Digital-store searches are limited to Amazon while that exclusivity applies; print editions can still be searched at other retailers.</p>':""}`;
  dialogContent.querySelectorAll(".format-button").forEach(button=>button.addEventListener("click",()=>{dialogContent.querySelector(".format-button.active")?.classList.remove("active");button.classList.add("active");selectedFormat=button.dataset.format;renderRetailers(book)}));
  renderRetailers(book);
@@ -60,7 +59,10 @@ function openBook(id){
 }
 function renderRetailers(book){
  const results=dialogContent.querySelector("#retailer-results");
- if(!results)return;
+ const directResults=dialogContent.querySelector("#direct-editions");
+ if(!results||!directResults)return;
+ const direct=(book.editions||[]).filter(e=>selectedFormat==="all"||formatForEdition(e)===selectedFormat);
+ directResults.innerHTML=direct.length?direct.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price||"See store")}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></div>`).join(""):`<p class="pending-note">No direct listing for this format is recorded yet. Use the retailer searches below to check current availability.</p>`;
  const formats=selectedFormat==="all"?["ebook","paperback","hardcover"]:[selectedFormat];
  const entries=[];
  for(const format of formats){

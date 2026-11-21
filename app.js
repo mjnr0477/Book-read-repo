@@ -10,21 +10,38 @@ let selectedFormat="all";
 
 // Retailer search destinations are fallbacks, not claims that a specific edition is in stock.
 const retailers=[
- {name:"Amazon",formats:["ebook","paperback","hardcover"],url:q=>"https://www.amazon.com/s?k="+q},
- {name:"AbeBooks",formats:["paperback","hardcover"],url:q=>"https://www.abebooks.com/servlet/SearchResults?kn="+q},
- {name:"Bookshop.org",formats:["paperback","hardcover"],url:q=>"https://bookshop.org/search?keywords="+q},
- {name:"Barnes & Noble",formats:["ebook","paperback","hardcover"],url:q=>"https://www.barnesandnoble.com/s/"+q},
- {name:"Walmart",formats:["paperback","hardcover"],url:q=>"https://www.walmart.com/search?q="+q},
- {name:"bol",formats:["paperback","hardcover"],url:q=>"https://www.bol.com/be/nl/s/?searchtext="+q},
- {name:"Kobo",formats:["ebook"],url:q=>"https://www.kobo.com/search?query="+q},
- {name:"Google Play Books",formats:["ebook"],url:q=>"https://play.google.com/store/search?q="+q+"&c=books"},
- {name:"Apple Books",formats:["ebook"],url:q=>"https://books.apple.com/us/search?term="+q},
- {name:"Google Books",formats:["ebook","paperback","hardcover"],url:q=>"https://books.google.com/books?q="+q},
- {name:"Thalia",formats:["ebook","paperback","hardcover"],url:q=>"https://www.thalia.de/suche?sq="+q},
- {name:"Foyles",formats:["paperback","hardcover"],url:q=>"https://www.foyles.co.uk/search?term="+q},
- {name:"Readings",formats:["paperback","hardcover"],url:q=>"https://www.readings.com.au/search/results?query="+q},
- {name:"Kinokuniya",formats:["paperback","hardcover"],url:q=>"https://www.kinokuniya.com/search?q="+q},
- {name:"World of Books",formats:["paperback","hardcover"],url:q=>"https://www.wob.com/en-gb/search?query="+q}
+ {name:"Amazon US",formats:["ebook","paperback","hardcover"],search:q=>"https://www.amazon.com/s?k="+q},
+ {name:"Amazon UK",formats:["ebook","paperback","hardcover"],search:q=>"https://www.amazon.co.uk/s?k="+q},
+ {name:"Amazon Canada",formats:["ebook","paperback","hardcover"],search:q=>"https://www.amazon.ca/s?k="+q},
+ {name:"Amazon Australia",formats:["ebook","paperback","hardcover"],search:q=>"https://www.amazon.com.au/s?k="+q},
+ {name:"AbeBooks",formats:["paperback","hardcover"],search:q=>"https://www.abebooks.com/servlet/SearchResults?kn="+q},
+ {name:"Bookshop.org",formats:["paperback","hardcover","ebook"],search:q=>"https://bookshop.org/search?keywords="+q},
+ {name:"Barnes & Noble",formats:["ebook","paperback","hardcover"],search:q=>"https://www.barnesandnoble.com/s/"+q},
+ {name:"Walmart Books",formats:["paperback","hardcover"],search:q=>"https://www.walmart.com/search?q="+q},
+ {name:"bol",formats:["ebook","paperback","hardcover"],search:q=>"https://www.bol.com/be/nl/s/?searchtext="+q},
+ {name:"Kobo",formats:["ebook"],search:q=>"https://www.kobo.com/search?query="+q},
+ {name:"Google Play Books",formats:["ebook"],search:q=>"https://play.google.com/store/search?q="+q+"&c=books"},
+ {name:"Apple Books",formats:["ebook"],search:q=>"https://books.apple.com/us/search?term="+q},
+ {name:"Google Books",formats:["ebook","paperback","hardcover"],search:q=>"https://books.google.com/books?q="+q},
+ {name:"Thalia",formats:["ebook","paperback","hardcover"],search:q=>"https://www.thalia.de/suche?sq="+q},
+ {name:"Foyles",formats:["paperback","hardcover"],search:q=>"https://www.foyles.co.uk/search?term="+q},
+ {name:"Readings",formats:["paperback","hardcover"],search:q=>"https://www.readings.com.au/search/results?query="+q},
+ {name:"Kinokuniya",formats:["paperback","hardcover"],search:q=>"https://www.kinokuniya.com/search?q="+q},
+ {name:"World of Books",formats:["paperback","hardcover"],search:q=>"https://www.wob.com/en-gb/search?query="+q},
+ {name:"The Nile",formats:["paperback","hardcover"],search:q=>"https://www.thenile.com.au/search/?q="+q},
+ {name:"Dymocks",formats:["paperback","hardcover"],home:"https://www.dymocks.com.au/"},
+ {name:"Hatchards",formats:["paperback","hardcover"],home:"https://www.hatchards.co.uk/"},
+ {name:"Tertulia",formats:["paperback","hardcover","ebook"],home:"https://tertulia.com/"},
+ {name:"Takealot",formats:["paperback","hardcover"],home:"https://www.takealot.com/"},
+ {name:"Indigo",formats:["ebook","paperback","hardcover"],home:"https://www.indigo.ca/"},
+ {name:"Waterstones",formats:["paperback","hardcover"],home:"https://www.waterstones.com/"},
+ {name:"Blackwell's",formats:["paperback","hardcover"],home:"https://blackwells.co.uk/"},
+ {name:"Booktopia",formats:["paperback","hardcover"],home:"https://www.booktopia.com.au/"},
+ {name:"Text Book Centre (Kenya)",formats:["ebook","paperback","hardcover"],home:"https://textbookcentre.com/shop/"},
+ {name:"Bookstop (Kenya)",formats:["paperback","hardcover"],home:"https://bookstop.co.ke/"},
+ {name:"Exclusive Books",formats:["paperback","hardcover"],home:"https://exclusivebooks.co.za/"},
+ {name:"Prestige Bookshop (Kenya)",formats:["paperback","hardcover"],home:"https://prestigebookshop.com/"},
+ {name:"Books-A-Million",formats:["paperback","hardcover"],home:"https://www.booksamillion.com/"}
 ];
 const formatNames={all:"All formats",ebook:"eBook",paperback:"Paperback",hardcover:"Hardcover"};
 const esc=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
@@ -68,12 +85,12 @@ function renderRetailers(book){
  for(const format of formats){
   const available=retailers.filter(store=>store.formats.includes(format)&&(!((book.id==="architecture-human-nature")&&format==="ebook")||store.name==="Amazon"));
   for(const store of available){
-   const query=encodeURIComponent(book.title+" Mathias Simiyu "+formatNames[format]);
-   entries.push({name:store.name,format,url:store.url(query)});
+   const query=encodeURIComponent(book.title+" "+(book.author||""));
+   entries.push({name:store.name,format,url:store.search?store.search(query):store.home,searchable:!!store.search});
   }
  }
  // Keep each store visible once per format, so users can compare edition-specific results.
- results.innerHTML=entries.map(item=>`<div class="edition retailer-result"><div><strong>${esc(item.name)}</strong><small>${esc(formatNames[item.format])} search · retailer availability varies</small></div><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Search store ↗</a></div>`).join("");
+ results.innerHTML=entries.map(item=>`<div class="edition retailer-result"><div><strong>${esc(item.name)}</strong><small>${esc(formatNames[item.format])} · ${item.searchable?"title search":"official store homepage; search title there"}</small></div><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${item.searchable?"Search title":"Visit store"} ↗</a></div>`).join("");
 }
 grid.addEventListener("click",event=>{const card=event.target.closest("[data-id]");if(card)openBook(card.dataset.id)});
 grid.addEventListener("keydown",event=>{if((event.key==="Enter"||event.key===" ")&&event.target.matches("[data-id]")){event.preventDefault();openBook(event.target.dataset.id)}});

@@ -1,25 +1,390 @@
 [
-  {"id":"architecture-human-nature","title":"The Architecture of Human Nature: An Inquiry into the Forces That Shape Who We Become","category":"Psychology & society","description":"A published title available in Kindle, paperback and hardcover editions.","cover":"gold","status":"available","editions":[{"format":"Kindle eBook","price":"$4.50 USD","retailer":"Amazon","url":"https://www.amazon.com/dp/B0HRLZKXJY"},{"format":"Paperback","price":"$10.00 USD","retailer":"Amazon","url":"https://www.amazon.com/dp/B0HRMF4CB4"},{"format":"Hardcover","price":"$16.00 USD","retailer":"Amazon","url":"https://www.amazon.com/dp/B0HRTZVN1V"}]},
-  {"id":"fast-easy-simple-first-million","title":"Fast, Easy, Simple And First Million Dollars","category":"Money & personal development","cover":"green","status":"verify"},
-  {"id":"fulfill-your-purpose","title":"Fulfill Your Purpose","category":"Personal development","cover":"blue","status":"verify"},
-  {"id":"football","title":"Football","category":"Sports","cover":"green","status":"verify"},
-  {"id":"education-is-not-the-key","title":"Education Is Not The Key","category":"Education & society","cover":"rust","status":"verify"},
-  {"id":"last-book","title":"Last Book","category":"General","cover":"plum","status":"verify"},
-  {"id":"won-in-mind","title":"Won In Mind","category":"Mindset","cover":"blue","status":"verify"},
-  {"id":"beyond-labels","title":"Beyond Labels","category":"Society","cover":"gold","status":"verify"},
-  {"id":"silent-master","title":"Silent Master","category":"Personal development","cover":"plum","status":"verify"},
-  {"id":"love-triangle","title":"Love Triangle","category":"Relationships","cover":"rust","status":"verify"},
-  {"id":"optional-death","title":"Optional Death","category":"Fiction / ideas","cover":"plum","status":"verify"},
-  {"id":"the-naked-species","title":"The Naked Species","category":"Human nature","cover":"rust","status":"verify"},
-  {"id":"brain-code-patternode","title":"Brain Code Patternode","category":"Mind & thinking","cover":"blue","status":"verify"},
-  {"id":"seduction","title":"Seduction","category":"Relationships","cover":"rust","status":"verify"},
-  {"id":"stay-awake","title":"Stay Awake","category":"Personal development","cover":"blue","status":"verify"},
-  {"id":"the-environment-shape-you","title":"The Environment Shape You","category":"Personal development","cover":"green","status":"verify"},
-  {"id":"before-you-call-her-wife","title":"Before You Call Her Wife","category":"Relationships","cover":"plum","status":"verify"},
-  {"id":"money","title":"Money","category":"Finance","cover":"gold","status":"verify"},
-  {"id":"humanity-outweigh-materialism","title":"Humanity Outweigh Materialism","category":"Society & philosophy","cover":"green","status":"verify"},
-  {"id":"break-the-chain","title":"Break the Chain","category":"Personal development","cover":"rust","status":"verify"},
-  {"id":"new-world","title":"New World","category":"Society & ideas","cover":"blue","status":"verify"},
-  {"id":"beyond-dimensions","title":"Beyond Dimensions","category":"Philosophy","cover":"plum","status":"verify"},
-  {"id":"men-resist-death","title":"Men Resist Death","category":"Human nature","cover":"gold","status":"verify"}
+  {
+    "id": "architecture-human-nature",
+    "title": "The Architecture of Human Nature: An Inquiry into the Forces That Shape Who We Become",
+    "category": "Psychology & society",
+    "description": "A published title available in Kindle, paperback and hardcover editions.",
+    "cover": "gold",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Kindle eBook",
+        "price": "$4.50 USD",
+        "retailer": "Amazon",
+        "url": "https://www.amazon.com/dp/B0HRLZKXJY"
+      },
+      {
+        "format": "Paperback",
+        "price": "$10.00 USD",
+        "retailer": "Amazon",
+        "url": "https://www.amazon.com/dp/B0HRMF4CB4"
+      },
+      {
+        "format": "Hardcover",
+        "price": "$16.00 USD",
+        "retailer": "Amazon",
+        "url": "https://www.amazon.com/dp/B0HRTZVN1V"
+      }
+    ]
+  },
+  {
+    "id": "fast-easy-simple-first-million",
+    "title": "Fast, Easy, Simple And First Million Dollars",
+    "category": "Money & personal development",
+    "cover": "green",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "The Nile",
+        "price": "See store",
+        "url": "https://www.thenile.com.au/books/mathias-simiyu/fast-easy-simple-and-first-million-dollars/9798233964442"
+      }
+    ]
+  },
+  {
+    "id": "fulfill-your-purpose",
+    "title": "Fulfill Your Purpose",
+    "category": "Personal development",
+    "cover": "blue",
+    "status": "available",
+    "editions": [
+      {
+        "format": "eBook",
+        "retailer": "Kobo",
+        "price": "See store",
+        "url": "https://www.kobo.com/us/en/ebook/fulfill-your-purpose"
+      }
+    ]
+  },
+  {
+    "id": "football",
+    "title": "Football",
+    "category": "Sports",
+    "cover": "green",
+    "status": "available",
+    "editions": [
+      {
+        "format": "eBook",
+        "retailer": "Thalia",
+        "price": "See store",
+        "url": "https://www.thalia.de/shop/home/artikeldetails/EAN9798232146900"
+      }
+    ]
+  },
+  {
+    "id": "education-is-not-the-key",
+    "title": "Education Is Not The Key",
+    "category": "Education & society",
+    "cover": "rust",
+    "status": "available",
+    "editions": [
+      {
+        "format": "eBook",
+        "retailer": "Rakuten Kobo",
+        "price": "See store",
+        "url": "https://books.rakuten.co.jp/rk/0dd764186a343e7ebed2dcae6b8ef395/"
+      }
+    ]
+  },
+  {
+    "id": "last-book",
+    "title": "Last Book",
+    "category": "General",
+    "cover": "plum",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Foyles",
+        "price": "See store",
+        "url": "https://www.foyles.co.uk/book/last-book/mathias-simiyu/9798235950887"
+      }
+    ]
+  },
+  {
+    "id": "won-in-mind",
+    "title": "Won In Mind",
+    "category": "Mindset",
+    "cover": "blue",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "The Nile",
+        "price": "See store",
+        "url": "https://www.thenile.com.au/books/mathias-simiyu/won-in-mind/9798232953423"
+      }
+    ]
+  },
+  {
+    "id": "beyond-labels",
+    "title": "Beyond Labels",
+    "category": "Society",
+    "cover": "gold",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/beyond-labels-mathias-simiyu/91a76b72c9936aee"
+      }
+    ]
+  },
+  {
+    "id": "silent-master",
+    "title": "Silent Master",
+    "category": "Personal development",
+    "cover": "plum",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Readings",
+        "price": "See store",
+        "url": "https://www.readings.com.au/product/9798232291518/silent-master--mathias-simiyu--2025--9798232291518"
+      }
+    ]
+  },
+  {
+    "id": "love-triangle",
+    "title": "Love Triangle",
+    "category": "Relationships",
+    "cover": "rust",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Dymocks",
+        "price": "See store",
+        "url": "https://www.dymocks.com.au/love-triangle-by-mathias-simiyu-9798235147836"
+      }
+    ]
+  },
+  {
+    "id": "optional-death",
+    "title": "Optional Death",
+    "category": "Fiction / ideas",
+    "cover": "plum",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Readings",
+        "price": "See store",
+        "url": "https://www.readings.com.au/product/9798232496937/optional-death--mathias-simiyu--2025--9798232496937"
+      }
+    ]
+  },
+  {
+    "id": "the-naked-species",
+    "title": "The Naked Species",
+    "category": "Human nature",
+    "cover": "rust",
+    "status": "available",
+    "editions": [
+      {
+        "format": "eBook",
+        "retailer": "Rakuten Kobo",
+        "price": "See store",
+        "url": "https://books.rakuten.co.jp/rk/65cd322687ae31daad96edaeeac5ce23/"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Kinokuniya",
+        "price": "See store",
+        "url": "https://usa.kinokuniya.com/ja/products/9798224736928"
+      }
+    ]
+  },
+  {
+    "id": "brain-code-patternode",
+    "title": "Brain Code Patternode",
+    "category": "Mind & thinking",
+    "cover": "blue",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Takealot",
+        "price": "See store",
+        "url": "https://www.takealot.com/brain-code-patternode/PLID101064345"
+      },
+      {
+        "format": "eBook",
+        "retailer": "Indigo / Kobo",
+        "price": "See store",
+        "url": "https://www.indigo.ca/products/brain-code-patternode"
+      }
+    ]
+  },
+  {
+    "id": "seduction",
+    "title": "Seduction",
+    "category": "Relationships",
+    "cover": "rust",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Hatchards",
+        "price": "See store",
+        "url": "https://www.hatchards.co.uk/book/seduction/mathias-simiyu/9798232918507"
+      }
+    ]
+  },
+  {
+    "id": "stay-awake",
+    "title": "Stay Awake",
+    "category": "Personal development",
+    "cover": "blue",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/stay-awake-mathias-simiyu/d26bdc3462496def"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Readings",
+        "price": "See store",
+        "url": "https://www.readings.com.au/product/9798232441678/stay-awake--mathias-simiyu--2025--9798232441678"
+      }
+    ]
+  },
+  {
+    "id": "the-environment-shape-you",
+    "title": "The Environment Shape You",
+    "category": "Personal development",
+    "cover": "green",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "The Nile",
+        "price": "See store",
+        "url": "https://www.thenile.com.au/books/mathias-simiyu/the-environment-shape-you/9798232606947"
+      },
+      {
+        "format": "eBook",
+        "retailer": "Rakuten Kobo",
+        "price": "See store",
+        "url": "https://books.rakuten.co.jp/rk/97479f2e2bf432db9b8d01411292bb44/"
+      }
+    ]
+  },
+  {
+    "id": "before-you-call-her-wife",
+    "title": "Before You Call Her Wife",
+    "category": "Relationships",
+    "cover": "plum",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Foyles",
+        "price": "See store",
+        "url": "https://www.foyles.co.uk/book/before-you-call-her-wife/mathias-simiyu/9798232932794"
+      },
+      {
+        "format": "eBook",
+        "retailer": "Rakuten Kobo",
+        "price": "See store",
+        "url": "https://books.rakuten.co.jp/rk/628985110f7031bfa0367ce01451d39a/"
+      }
+    ]
+  },
+  {
+    "id": "money",
+    "title": "Money",
+    "category": "Finance",
+    "cover": "gold",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Hatchards",
+        "price": "See store",
+        "url": "https://www.hatchards.co.uk/book/money/mathias-simiyu/9798232649609"
+      }
+    ]
+  },
+  {
+    "id": "humanity-outweigh-materialism",
+    "title": "Humanity Outweigh Materialism",
+    "category": "Society & philosophy",
+    "cover": "green",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Readings",
+        "price": "See store",
+        "url": "https://www.readings.com.au/product/9798232109547/humanity-outweigh-materialism--mathias-simiyu--2025--9798232109547"
+      }
+    ]
+  },
+  {
+    "id": "break-the-chain",
+    "title": "Break the Chain",
+    "category": "Personal development",
+    "cover": "rust",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Tertulia",
+        "price": "See store",
+        "url": "https://tertulia.com/book/break-the-chain-mathias-simiyu/9798232421656"
+      }
+    ]
+  },
+  {
+    "id": "new-world",
+    "title": "New World",
+    "category": "Society & ideas",
+    "cover": "blue",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Readings",
+        "price": "See store",
+        "url": "https://www.readings.com.au/product/9798232676568/new-world--mathias-simiyu--2025--9798232676568"
+      }
+    ]
+  },
+  {
+    "id": "beyond-dimensions",
+    "title": "Beyond Dimensions",
+    "category": "Philosophy",
+    "cover": "plum",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Readings",
+        "price": "See store",
+        "url": "https://www.readings.com.au/product/9798232923693/beyond-dimensions--mathias-simiyu--2025--9798232923693"
+      }
+    ]
+  },
+  {
+    "id": "men-resist-death",
+    "title": "Men Resist Death",
+    "category": "Human nature",
+    "cover": "gold",
+    "status": "available",
+    "editions": [
+      {
+        "format": "Paperback",
+        "retailer": "Foyles",
+        "price": "See store",
+        "url": "https://www.foyles.co.uk/book/men-resist-death/mathias-simiyu/9798232535278"
+      }
+    ]
+  }
 ]

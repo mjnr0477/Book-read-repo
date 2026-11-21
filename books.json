@@ -3,7 +3,7 @@
     "id": "architecture-human-nature",
     "title": "The Architecture of Human Nature: An Inquiry into the Forces That Shape Who We Become",
     "category": "Psychology & society",
-    "description": "A published title available in Kindle, paperback and hardcover editions.",
+    "description": "An inquiry into the forces that shape who we become, as framed by the book's subtitle.",
     "cover": "gold",
     "status": "available",
     "editions": [
@@ -54,9 +54,25 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798233964442/Fast-Easy-Simple-First-Million/plp",
         "isbn": "9798233964442"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/fast-easy-simple-and-first-million-dollars-mathias-simiyu/59fac3fa54bf00e0?ean=9798233964442",
+        "isbn": "9798233964442"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/fast-easy-simple-and-first-million-dollars-mathias-simiyu/book/9798233964442.html",
+        "isbn": "9798233964442"
       }
     ],
-    "isbn": "9798233964442"
+    "isbn": "9798233964442",
+    "description": "A practical look at money, opportunity and the market, encouraging readers to shift their thinking, create value and take consistent steps toward financial growth.",
+    "coverUrl": "https://images-us.bookshop.org/ingram/9798233964442.jpg?v=b51fd8af1028adf83a1a743c39da5733&width=600"
   },
   {
     "id": "fulfill-your-purpose",
@@ -78,9 +94,25 @@
         "price": "See store",
         "url": "https://www.morawa.at/detail/ISBN-9798224138630/Simiyu-Mathias/Fulfill-Your-Purpose",
         "isbn": "9798224138630"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Barnes & Noble",
+        "price": "See store",
+        "url": "https://www.barnesandnoble.com/w/fulfill-your-purpose-mathias-simiyu/1149559860",
+        "isbn": "9798224138630"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/fulfill-your-purpose-mathias-simiyu/57a58c4a140a2026?ean=9798249826772",
+        "isbn": "9798249826772"
       }
     ],
-    "isbn": "9798224138630"
+    "isbn": "9798224138630",
+    "description": "A philosophical exploration of purpose, identity and inner alignment, using a fisherman's story to examine how removing inner division can clarify the life a person builds.",
+    "coverUrl": "https://cdn.kobo.com/book-images/b07d2c17-1da7-49d3-87a3-88ac1384bbff/1200/1200/False/fulfill-your-purpose.jpg"
   },
   {
     "id": "football",
@@ -120,11 +152,26 @@
         "format": "eBook",
         "retailer": "Kobo",
         "price": "See store",
-        "url": "https://fr.kobo.com/us/en/ebook/football-59",
+        "url": "https://tr.kobo.com/us/en/ebook/football-59",
+        "isbn": "9798232146900"
+      },
+      {
+        "format": "eBook",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://www.booktopia.com.au/football-mathias-simiyu/ebook/9798232146900.html",
+        "isbn": "9798232146900"
+      },
+      {
+        "format": "eBook",
+        "retailer": "bol",
+        "price": "See store",
+        "url": "https://www.bol.com/be/nl/p/football/9300000239908112/",
         "isbn": "9798232146900"
       }
     ],
-    "isbn": "9798232146900"
+    "isbn": "9798232146900",
+    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232146900/4393/football.jpg"
   },
   {
     "id": "education-is-not-the-key",
@@ -138,9 +185,18 @@
         "retailer": "Rakuten Kobo",
         "price": "See store",
         "url": "https://books.rakuten.co.jp/rk/0dd764186a343e7ebed2dcae6b8ef395/"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/education-is-not-the-key-mathias-simiyu/5a632f14c2efc257?ean=9798233362286",
+        "isbn": "9798233362286"
       }
     ],
-    "isbn": "9798233362286"
+    "isbn": "9798233362286",
+    "description": "Questions the idea that education alone guarantees wealth or success, presenting it instead as a starting point for communication, connection and further opportunity.",
+    "coverUrl": "https://images-us.bookshop.org/ingram/9798233362286.jpg?v=34da0d3d5d6070820dc8b54c05481f22&width=600"
   },
   {
     "id": "last-book",
@@ -162,12 +218,28 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798235950887/Last-Book-Simiyu-Mathias/plp",
         "isbn": "9798235950887"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/last-book-mathias-simiyu/df0d39b546079686?ean=9798235950887",
+        "isbn": "9798235950887"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://booktopia.com.au/last-book-mathias-simiyu/book/9798235950887.html",
+        "isbn": "9798235950887"
       }
     ],
     "isbn": "9798235950887",
     "universalUrls": [
       "https://books2read.com/u/8DkMpZ"
-    ]
+    ],
+    "description": "A reflection on the point at which advice and other people's experiences must give way to personal choices, responsibility and a path of one's own.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/8DkMpZ"
   },
   {
     "id": "won-in-mind",
@@ -201,7 +273,9 @@
     "isbn": "9798232953423",
     "universalUrls": [
       "https://books2read.com/u/0zYVLP"
-    ]
+    ],
+    "description": "Encourages readers to think beyond immediate pleasure, protect their future and build something lasting through deliberate choices.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/0zYVLP"
   },
   {
     "id": "beyond-labels",
@@ -242,7 +316,9 @@
     "isbn": "9798233250552",
     "universalUrls": [
       "https://books2read.com/u/QZ2Ko7"
-    ]
+    ],
+    "description": "Explores how guilt, fear, identity and social expectations can become mental constraints, and considers how honesty and self-understanding can help readers live more freely.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/QZ2Ko7"
   },
   {
     "id": "silent-master",
@@ -276,7 +352,9 @@
     "isbn": "9798232291518",
     "universalUrls": [
       "https://books2read.com/u/ZwxjM2"
-    ]
+    ],
+    "description": "Examines how machines and technology can quietly replace human effort, reshape society and shift the balance of control and freedom.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/ZwxjM2"
   },
   {
     "id": "love-triangle",
@@ -296,13 +374,6 @@
         "format": "Paperback",
         "retailer": "AbeBooks",
         "price": "See store",
-        "url": "https://www.abebooks.com/products/isbn/9798235147836",
-        "isbn": "9798235147836"
-      },
-      {
-        "format": "Paperback",
-        "retailer": "AbeBooks",
-        "price": "See store",
         "url": "https://www.abebooks.com/9798235147836/Love-Triangle-Simiyu-Mathias/plp",
         "isbn": "9798235147836"
       }
@@ -310,7 +381,9 @@
     "isbn": "9798235147836",
     "universalUrls": [
       "https://books2read.com/u/LragO0"
-    ]
+    ],
+    "description": "A relationship story of love, loss and unexpected connection, as Cate, David and Mathias confront changing feelings and the consequences of their choices.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/LragO0"
   },
   {
     "id": "optional-death",
@@ -344,7 +417,9 @@
     "isbn": "9798232496937",
     "universalUrls": [
       "https://books2read.com/u/7kMXp7"
-    ]
+    ],
+    "description": "A reflection on the mind as a person's most important resource, urging readers to develop disciplined thinking and protect the choices that shape their lives.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/7kMXp7"
   },
   {
     "id": "the-naked-species",
@@ -378,7 +453,9 @@
     "isbn": "9798224736928",
     "universalUrls": [
       "https://books2read.com/u/RB9KMv"
-    ]
+    ],
+    "description": "A call to look beyond status, consumerism and digital distraction, and to approach life with greater honesty, attention and purpose.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/RB9KMv"
   },
   {
     "id": "brain-code-patternode",
@@ -423,7 +500,9 @@
         "isbn": "9798233431555"
       }
     ],
-    "isbn": "9798233431555"
+    "isbn": "9798233431555",
+    "description": "Explores recurring mental and social patterns—from memory loops to language and influence—and offers ways to recognize habits that shape behaviour and make more deliberate choices.",
+    "coverUrl": "https://www.indigo.ca/cdn/shop/files/image_680c08e9-275f-4591-8a70-1271fdb20253.jpg?v=1770307317"
   },
   {
     "id": "seduction",
@@ -451,7 +530,9 @@
     "universalUrls": [
       "https://books2read.com/u/WKjdqx",
       "https://books2read.com/u/V7jKx5"
-    ]
+    ],
+    "description": "Explores the psychology of attraction, influence and human connection, including the subtle dynamics that shape how people perceive and respond to one another.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/WKjdqx"
   },
   {
     "id": "stay-awake",
@@ -492,7 +573,9 @@
     "isbn": "9798232441678",
     "universalUrls": [
       "https://books2read.com/u/lKZWgB"
-    ]
+    ],
+    "description": "Invites readers to question the masks they wear, see the world more clearly and move toward a more authentic sense of self.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/lKZWgB"
   },
   {
     "id": "the-environment-shape-you",
@@ -533,7 +616,9 @@
     "isbn": "9798232606947",
     "universalUrls": [
       "https://books2read.com/u/vYrZwJ"
-    ]
+    ],
+    "description": "Argues that the people and surroundings around us strongly influence behaviour, and encourages readers to shape their environment to support the life they want.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/vYrZwJ"
   },
   {
     "id": "before-you-call-her-wife",
@@ -562,9 +647,18 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232932794/Before-Call-Wife-Simiyu-Mathias/plp",
         "isbn": "9798232932794"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/before-you-call-her-wife-mathias-simiyu/5c2c8ea6d6969e74?ean=9798232932794",
+        "isbn": "9798232932794"
       }
     ],
-    "isbn": "9798232932794"
+    "isbn": "9798232932794",
+    "description": "A relationship-focused reflection on how personal history and the choices people make together can shape the future of a partnership.",
+    "coverUrl": "https://images-us.bookshop.org/ingram/9798232932794.jpg?v=5933a0e458eed02b81d9607301267d75&width=600"
   },
   {
     "id": "money",
@@ -595,7 +689,9 @@
         "isbn": "9798232649609"
       }
     ],
-    "isbn": "9798232649609"
+    "isbn": "9798232649609",
+    "description": "A concise reflection on money as a tool: understanding how to manage it deliberately rather than allowing it to control one's choices.",
+    "coverUrl": "https://image.yes24.com/goods/156238726/xl"
   },
   {
     "id": "humanity-outweigh-materialism",
@@ -631,12 +727,28 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232109547/Humanity-Outweigh-Materialism-Simiyu-Mathias/plp",
         "isbn": "9798232109547"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Jarir Bookstore",
+        "price": "See store",
+        "url": "https://www.jarir.com/sa-en/humanity-outweigh-materialism-9798232109547.html",
+        "isbn": "9798232109547"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Orell Füssli",
+        "price": "See store",
+        "url": "https://www.orellfuessli.ch/shop/home/artikeldetails/A1077405372",
+        "isbn": "9798232109547"
       }
     ],
     "isbn": "9798232109547",
     "universalUrls": [
       "https://books2read.com/u/zpDjGZ"
-    ]
+    ],
+    "description": "Makes the case for valuing people and human connection above material possessions, and for not allowing small mistakes to erase the importance of others.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/zpDjGZ"
   },
   {
     "id": "break-the-chain",
@@ -677,7 +789,9 @@
     "isbn": "9798232421656",
     "universalUrls": [
       "https://books2read.com/u/7kMXDN"
-    ]
+    ],
+    "description": "Encourages readers to recognize invisible constraints, take responsibility for their choices and regain control before limiting patterns take hold.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/7kMXDN"
   },
   {
     "id": "new-world",
@@ -706,12 +820,21 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232676568/New-World-Simiyu-Mathias/plp",
         "isbn": "9798232676568"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Barnes & Noble",
+        "price": "See store",
+        "url": "https://www.barnesandnoble.com/w/new-world-mathias-simiyu/1148326682",
+        "isbn": "9798232676568"
       }
     ],
     "isbn": "9798232676568",
     "universalUrls": [
       "https://books2read.com/u/jKrWjl"
-    ]
+    ],
+    "description": "A manifesto for people who refuse to remain an afterthought, choose purpose and aim to become fully engaged in a world that can encourage passivity.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/jKrWjl"
   },
   {
     "id": "beyond-dimensions",
@@ -754,9 +877,18 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232923693/Beyond-Dimensions-Simiyu-Mathias/plp",
         "isbn": "9798232923693"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Barnes & Noble",
+        "price": "See store",
+        "url": "https://www.barnesandnoble.com/w/beyond-dimensions-mathias-simiyu/1148711478",
+        "isbn": "9798232923693"
       }
     ],
-    "isbn": "9798232923693"
+    "isbn": "9798232923693",
+    "description": "A philosophical reflection on perception, dimensions and the idea that reality may extend beyond the way people ordinarily interpret it.",
+    "coverUrl": "https://cdn.shopify.com/s/files/1/0674/5433/7265/files/9798232923693_p0.jpg?v=1765356414"
   },
   {
     "id": "men-resist-death",
@@ -778,12 +910,28 @@
         "price": "See store",
         "url": "https://www.abebooks.com/9798232535278/Men-Resist-Death-Simiyu-Mathias/plp",
         "isbn": "9798232535278"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Bookshop.org",
+        "price": "See store",
+        "url": "https://bookshop.org/p/books/men-resist-death-mathias-simiyu/b94b9fe63395c973?ean=9798232535278",
+        "isbn": "9798232535278"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Booktopia",
+        "price": "See store",
+        "url": "https://booktopia.com.au/men-resist-death-mathias-simiyu/book/9798232535278.html",
+        "isbn": "9798232535278"
       }
     ],
     "isbn": "9798232535278",
     "universalUrls": [
       "https://books2read.com/u/gK9lOK"
-    ]
+    ],
+    "description": "Reflects on ambition, purpose, masculinity and mortality, emphasizing the importance of the dreams and work a person builds.",
+    "coverUrl": "https://books2read-prod.s3.amazonaws.com/ubl_book_images/gK9lOK"
   },
   {
     "id": "sell-without-selling",
@@ -815,8 +963,16 @@
     "title": "You're Not Falling Behind",
     "category": "Personal development",
     "cover": "blue",
-    "status": "coming",
-    "description": "Listed in the author's public book catalogue. No ISBN or matching retailer product page has been verified yet.",
-    "editions": []
+    "status": "available",
+    "description": "A practical guide for readers who feel overwhelmed by adult responsibilities, early career decisions or the pressure to have life figured out, with simple systems for managing time, money and energy.",
+    "editions": [
+      {
+        "format": "Kindle eBook",
+        "retailer": "Amazon",
+        "price": "See store",
+        "url": "https://www.amazon.com/Youre-Not-Falling-Behind-Practical-ebook/dp/B0GLTLZ4NQ",
+        "asin": "B0GLTLZ4NQ"
+      }
+    ]
   }
 ]

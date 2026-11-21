@@ -697,6 +697,13 @@
         "price": "See store",
         "url": "https://www.booktopia.com.au/the-environment-shape-you-mathias-simiyu/book/9798232606947.html",
         "isbn": "9798232606947"
+      },
+      {
+        "format": "Paperback",
+        "retailer": "Indigo",
+        "price": "See store",
+        "url": "https://www.indigo.ca/products/the-environment-shape-you-1",
+        "isbn": "9798232606947"
       }
     ],
     "isbn": "9798232606947",
@@ -988,7 +995,7 @@
     ],
     "isbn": "9798232923693",
     "description": "A philosophical meditation on perception and reality, proposing that what we see as dimensions may be only a limited view of matter and energy in motion.",
-    "coverUrl": "https://www.booktopia.com.au/covers/big/9798232735197/5126/beyond-dimensions.jpg"
+    "coverUrl": "https://images-us.bookshop.org/ingram/9798232923693.jpg?v=940abb17758a59908e22d50b8cb02ae7&width=600"
   },
   {
     "id": "men-resist-death",

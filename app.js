@@ -48,13 +48,36 @@ const esc=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&
 function render(){
  const term=search.value.trim().toLowerCase();
  const visible=books.filter(book=>{
-  const matches=(book.title+" "+(book.category||"")).toLowerCase().includes(term);
+  const editionText=(book.editions||[]).map(e=>[e.format,e.retailer,e.isbn].filter(Boolean).join(" ")).join(" ");
+  const searchable=[book.title,book.category,book.description,book.isbn,editionText].filter(Boolean).join(" ").toLowerCase();
+  const matches=searchable.includes(term);
   const ready=(book.editions||[]).length>0;
   return matches&&(activeFilter==="all"||(activeFilter==="available"&&ready)||(activeFilter==="coming"&&!ready));
  });
  count.textContent=visible.length+" "+(visible.length===1?"book":"books");
- grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${(book.editions||[]).length?"ready":""}">${(book.editions||[]).length?"STORE LINKS":"FIND RETAILERS"}</span></div></article>`).join("");
+ grid.innerHTML=visible.map(book=>{
+  const cover=book.coverUrl
+   ? `<div class="cover has-cover"><img class="cover-image" src="${esc(book.coverUrl)}" alt="Cover of ${esc(book.title)}" loading="lazy"><span class="cover-fallback" hidden>${esc(book.title)}</span></div>`
+   : `<div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div>`;
+  return `<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}">${cover}<div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${(book.editions||[]).length?"ready":""}">${(book.editions||[]).length?"STORE LINKS":"FIND RETAILERS"}</span></div></article>`;
+ }).join("");
+ grid.querySelectorAll(".cover-image").forEach(img=>img.addEventListener("error",()=>{
+  img.hidden=true;
+  const fallback=img.parentElement.querySelector(".cover-fallback");
+  if(fallback)fallback.hidden=false;
+ }));
  empty.hidden=visible.length>0;
+}
+function renderHeroCovers(){
+ const container=document.getElementById("hero-covers");
+ if(!container)return;
+ const featured=books.filter(book=>book.coverUrl).slice(0,3);
+ container.innerHTML=featured.map((book,index)=>`<div class="hero-cover hero-cover-${index}"><img src="${esc(book.coverUrl)}" alt="" loading="lazy"><span class="hero-cover-fallback" hidden>${esc(book.title)}</span></div>`).join("");
+ container.querySelectorAll("img").forEach(img=>img.addEventListener("error",()=>{
+  img.hidden=true;
+  const fallback=img.parentElement.querySelector(".hero-cover-fallback");
+  if(fallback)fallback.hidden=false;
+ }));
 }
 function formatForEdition(edition){
  const value=(edition.format||"").toLowerCase();
@@ -66,13 +89,25 @@ function formatForEdition(edition){
 function openBook(id){
  const book=books.find(item=>item.id===id);if(!book)return;
  selectedFormat="all";
- const editions=book.editions||[];
  const isSelectExclusive=book.id==="architecture-human-nature";
  const universalLinks=Array.isArray(book.universalUrls)?book.universalUrls:(book.universalUrl?[book.universalUrl]:[]);
- const universalHtml=universalLinks.length?`<div class="universal-store-link">${universalLinks.map((url,index)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Choose your bookstore${universalLinks.length>1?" ("+(index+1)+")":""} ↗</a>`).join("")}<small>Verified Books2Read link${universalLinks.length>1?"s":""} for this title.</small></div>`:"";
- const directHtml=`${universalHtml}<h3 class="store-search-heading">Book-specific retailer listings</h3><div class="edition-list" id="direct-editions"></div>`;
- dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"Explore available editions and check each retailer for current price, format and delivery options.")}</p>${directHtml}<h3 class="store-search-heading">Shop this title by format</h3><div class="format-tabs" role="group" aria-label="Choose book format">${Object.entries(formatNames).map(([key,label])=>`<button type="button" class="format-button ${key==="all"?"active":""}" data-format="${key}">${label}</button>`).join("")}</div><p class="store-search-note" id="format-note">Choose a retailer to check its current listing. Search links do not guarantee stock or availability.</p><div class="edition-list" id="retailer-results"></div>${isSelectExclusive?'<p class="select-note">This eBook is enrolled in Kindle Select. Digital-store searches are limited to Amazon while that exclusivity applies; print editions can still be searched at other retailers.</p>':""}`;
- dialogContent.querySelectorAll(".format-button").forEach(button=>button.addEventListener("click",()=>{dialogContent.querySelector(".format-button.active")?.classList.remove("active");button.classList.add("active");selectedFormat=button.dataset.format;renderRetailers(book)}));
+ const universalHtml=universalLinks.length?`<div class="universal-store-link">${universalLinks.map((url,index)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Choose your bookstore${universalLinks.length>1?" ("+(index+1)+")":""} ↗</a>`).join("")}<small>Books2Read · participating bookstores for this title</small></div>`:"";
+ const coverHtml=book.coverUrl
+  ? `<div class="dialog-cover-frame"><img class="dialog-cover-image" src="${esc(book.coverUrl)}" alt="Cover of ${esc(book.title)}"><span class="dialog-cover-fallback" hidden>${esc(book.title)}</span></div>`
+  : `<div class="dialog-cover-frame dialog-cover-placeholder ${esc(book.cover||"blue")}">${esc(book.title)}</div>`;
+ dialogContent.innerHTML=`<div class="dialog-book-intro">${coverHtml}<div class="dialog-book-copy"><p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"Book description not yet verified. Check the retailer's product page for the publisher's full description.")}</p></div></div>${universalHtml}<h3 class="store-search-heading">Book-specific retailer listings</h3><div class="edition-list" id="direct-editions"></div><h3 class="store-search-heading">Shop this title by format</h3><div class="format-tabs" role="group" aria-label="Choose book format">${Object.entries(formatNames).map(([key,label])=>`<button type="button" class="format-button ${key==="all"?"active":""}" data-format="${key}">${label}</button>`).join("")}</div><p class="store-search-note" id="format-note">Choose a retailer to check its current listing. Search links do not guarantee stock or availability.</p><div class="edition-list" id="retailer-results"></div>${isSelectExclusive?'<p class="select-note">This eBook is enrolled in Kindle Select. Digital-store searches are limited to Amazon while that exclusivity applies; print editions can still be searched separately.</p>':""}`;
+ const dialogCover=dialogContent.querySelector(".dialog-cover-image");
+ if(dialogCover)dialogCover.addEventListener("error",()=>{
+  dialogCover.hidden=true;
+  const fallback=dialogCover.parentElement.querySelector(".dialog-cover-fallback");
+  if(fallback)fallback.hidden=false;
+ });
+ dialogContent.querySelectorAll(".format-button").forEach(button=>button.addEventListener("click",()=>{
+  dialogContent.querySelector(".format-button.active")?.classList.remove("active");
+  button.classList.add("active");
+  selectedFormat=button.dataset.format;
+  renderRetailers(book);
+ }));
  renderRetailers(book);
  dialog.showModal();
 }
@@ -101,5 +136,4 @@ document.querySelectorAll(".filter-button").forEach(button=>button.addEventListe
 document.getElementById("dialog-close").addEventListener("click",()=>dialog.close());
 dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});
 document.getElementById("year").textContent=new Date().getFullYear();
-fetch("./books.json").then(response=>{if(!response.ok)throw new Error("Catalogue unavailable");return response.json()}).then(data=>{books=data;render()}).catch(()=>{count.textContent="Catalogue unavailable";empty.hidden=false;empty.textContent="The book catalogue could not be loaded. Please refresh the page."});
-fetch("./universal-links.json").then(response=>{if(!response.ok)throw new Error("Universal links unavailable");return response.json()}).then(data=>{const list=document.getElementById("universal-links-list");if(!list)return;list.innerHTML=(data.links||[]).map((url,index)=>`<div class="edition"><div><strong>Universal book link ${index+1}</strong><small>Books2Read · choose from the bookstores listed for this title</small></div><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">View stores ↗</a></div>`).join("")}).catch(()=>{});
+fetch("./books.json").then(response=>{if(!response.ok)throw new Error("Catalogue unavailable");return response.json()}).then(data=>{books=data;render();renderHeroCovers()}).catch(()=>{count.textContent="Catalogue unavailable";empty.hidden=false;empty.textContent="The book catalogue could not be loaded. Please refresh the page."});

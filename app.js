@@ -6,16 +6,27 @@ const dialog=document.getElementById("book-dialog");
 const dialogContent=document.getElementById("dialog-content");
 let books=[];
 let activeFilter="all";
-const storeSearches=[
- ["Amazon","https://www.amazon.com/s?k="],
- ["AbeBooks","https://www.abebooks.com/servlet/SearchResults?kn="],
- ["Bookshop.org","https://bookshop.org/search?keywords="],
- ["Barnes & Noble","https://www.barnesandnoble.com/s/"],
- ["Walmart","https://www.walmart.com/search?q="],
- ["bol","https://www.bol.com/be/nl/s/?searchtext="],
- ["Kobo","https://www.kobo.com/search?query="],
- ["Google Books","https://books.google.com/books?q="]
+let selectedFormat="all";
+
+// Retailer search destinations are fallbacks, not claims that a specific edition is in stock.
+const retailers=[
+ {name:"Amazon",formats:["ebook","paperback","hardcover"],url:q=>"https://www.amazon.com/s?k="+q},
+ {name:"AbeBooks",formats:["paperback","hardcover"],url:q=>"https://www.abebooks.com/servlet/SearchResults?kn="+q},
+ {name:"Bookshop.org",formats:["paperback","hardcover"],url:q=>"https://bookshop.org/search?keywords="+q},
+ {name:"Barnes & Noble",formats:["ebook","paperback","hardcover"],url:q=>"https://www.barnesandnoble.com/s/"+q},
+ {name:"Walmart",formats:["paperback","hardcover"],url:q=>"https://www.walmart.com/search?q="+q},
+ {name:"bol",formats:["paperback","hardcover"],url:q=>"https://www.bol.com/be/nl/s/?searchtext="+q},
+ {name:"Kobo",formats:["ebook"],url:q=>"https://www.kobo.com/search?query="+q},
+ {name:"Google Play Books",formats:["ebook"],url:q=>"https://play.google.com/store/search?q="+q+"&c=books"},
+ {name:"Apple Books",formats:["ebook"],url:q=>"https://books.apple.com/us/search?term="+q},
+ {name:"Google Books",formats:["ebook","paperback","hardcover"],url:q=>"https://books.google.com/books?q="+q},
+ {name:"Thalia",formats:["ebook","paperback","hardcover"],url:q=>"https://www.thalia.de/suche?sq="+q},
+ {name:"Foyles",formats:["paperback","hardcover"],url:q=>"https://www.foyles.co.uk/search?term="+q},
+ {name:"Readings",formats:["paperback","hardcover"],url:q=>"https://www.readings.com.au/search/results?query="+q},
+ {name:"Kinokuniya",formats:["paperback","hardcover"],url:q=>"https://www.kinokuniya.com/search?q="+q},
+ {name:"World of Books",formats:["paperback","hardcover"],url:q=>"https://www.wob.com/en-gb/search?query="+q}
 ];
+const formatNames={all:"All formats",ebook:"eBook",paperback:"Paperback",hardcover:"Hardcover"};
 const esc=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 function render(){
  const term=search.value.trim().toLowerCase();
@@ -25,14 +36,42 @@ function render(){
   return matches&&(activeFilter==="all"||(activeFilter==="available"&&ready)||(activeFilter==="coming"&&!ready));
  });
  count.textContent=visible.length+" "+(visible.length===1?"book":"books");
- grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${book.status==="available"?"ready":""}">${book.status==="available"?"EDITION LINKS AVAILABLE":"STORE LINKS BEING VERIFIED"}</span></div></article>`).join("");
+ grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${book.status==="available"?"ready":""}">${book.status==="available"?"STORE OPTIONS":"STORE LINKS BEING VERIFIED"}</span></div></article>`).join("");
  empty.hidden=visible.length>0;
+}
+function formatForEdition(edition){
+ const value=(edition.format||"").toLowerCase();
+ if(value.includes("kindle")||value.includes("ebook")||value.includes("e-book")||value.includes("digital"))return "ebook";
+ if(value.includes("hardcover")||value.includes("hardback"))return "hardcover";
+ if(value.includes("paperback")||value.includes("print"))return "paperback";
+ return "other";
 }
 function openBook(id){
  const book=books.find(item=>item.id===id);if(!book)return;
+ selectedFormat="all";
  const editions=book.editions||[];
- dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"This title is part of the growing Book Read catalogue. Retailer listings are being checked before purchase links are published.")}</p>${editions.length?`<div class="edition-list">${editions.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price)}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Visit store ↗</a></div>`).join("")}</div>`:`<p class="pending-note">Purchase links for this title are being verified. We will add store options once the correct listings are confirmed.</p>`}<h3 class="store-search-heading">Find this book at more stores</h3><p class="store-search-note">Search these retailers for this title. Availability and format depend on each store.</p><div class="edition-list">${storeSearches.filter(([name])=>book.id!=="architecture-human-nature"||!["Kobo","Google Books"].includes(name)).map(([name,base])=>`<div class="edition"><div><strong>${esc(name)}</strong><small>Search for ${esc(book.title)}</small></div><a href="${base+encodeURIComponent(book.title+" Mathias Simiyu")}" target="_blank" rel="noopener noreferrer">Search store ↗</a></div>`).join("")}</div>`;
+ const isSelectExclusive=book.id==="architecture-human-nature";
+ const direct=editions.filter(e=>selectedFormat==="all"||formatForEdition(e)===selectedFormat);
+ const directHtml=direct.length?`<h3 class="store-search-heading">Confirmed edition links supplied for this title</h3><div class="edition-list">${direct.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price||"See store")}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></div>`).join("")}</div>`:`<p class="pending-note">No direct listing for this format is recorded yet. Use the retailer searches below to check current availability.</p>`;
+ dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"Explore available editions and check each retailer for current price, format and delivery options.")}</p>${directHtml}<h3 class="store-search-heading">Shop this title by format</h3><div class="format-tabs" role="group" aria-label="Choose book format">${Object.entries(formatNames).map(([key,label])=>`<button type="button" class="format-button ${key==="all"?"active":""}" data-format="${key}">${label}</button>`).join("")}</div><p class="store-search-note" id="format-note">Choose a retailer to check its current listing. Search links do not guarantee stock or availability.</p><div class="edition-list" id="retailer-results"></div>${isSelectExclusive?'<p class="select-note">This eBook is enrolled in Kindle Select. Digital-store searches are limited to Amazon while that exclusivity applies; print editions can still be searched at other retailers.</p>':""}`;
+ dialogContent.querySelectorAll(".format-button").forEach(button=>button.addEventListener("click",()=>{dialogContent.querySelector(".format-button.active")?.classList.remove("active");button.classList.add("active");selectedFormat=button.dataset.format;renderRetailers(book)}));
+ renderRetailers(book);
  dialog.showModal();
+}
+function renderRetailers(book){
+ const results=dialogContent.querySelector("#retailer-results");
+ if(!results)return;
+ const formats=selectedFormat==="all"?["ebook","paperback","hardcover"]:[selectedFormat];
+ const entries=[];
+ for(const format of formats){
+  const available=retailers.filter(store=>store.formats.includes(format)&&(!((book.id==="architecture-human-nature")&&format==="ebook")||store.name==="Amazon"));
+  for(const store of available){
+   const query=encodeURIComponent(book.title+" Mathias Simiyu "+formatNames[format]);
+   entries.push({name:store.name,format,url:store.url(query)});
+  }
+ }
+ // Keep each store visible once per format, so users can compare edition-specific results.
+ results.innerHTML=entries.map(item=>`<div class="edition retailer-result"><div><strong>${esc(item.name)}</strong><small>${esc(formatNames[item.format])} search · retailer availability varies</small></div><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Search store ↗</a></div>`).join("");
 }
 grid.addEventListener("click",event=>{const card=event.target.closest("[data-id]");if(card)openBook(card.dataset.id)});
 grid.addEventListener("keydown",event=>{if((event.key==="Enter"||event.key===" ")&&event.target.matches("[data-id]")){event.preventDefault();openBook(event.target.dataset.id)}});

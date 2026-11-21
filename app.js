@@ -6,6 +6,16 @@ const dialog=document.getElementById("book-dialog");
 const dialogContent=document.getElementById("dialog-content");
 let books=[];
 let activeFilter="all";
+const storeSearches=[
+ ["Amazon","https://www.amazon.com/s?k="],
+ ["AbeBooks","https://www.abebooks.com/servlet/SearchResults?kn="],
+ ["Bookshop.org","https://bookshop.org/search?keywords="],
+ ["Barnes & Noble","https://www.barnesandnoble.com/s/"],
+ ["Walmart","https://www.walmart.com/search?q="],
+ ["bol","https://www.bol.com/be/nl/s/?searchtext="],
+ ["Kobo","https://www.kobo.com/search?query="],
+ ["Google Books","https://books.google.com/books?q="]
+];
 const esc=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 function render(){
  const term=search.value.trim().toLowerCase();
@@ -21,7 +31,7 @@ function render(){
 function openBook(id){
  const book=books.find(item=>item.id===id);if(!book)return;
  const editions=book.editions||[];
- dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"This title is part of the growing Book Read catalogue. Retailer listings are being checked before purchase links are published.")}</p>${editions.length?`<div class="edition-list">${editions.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price)}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Visit store ↗</a></div>`).join("")}</div>`:`<p class="pending-note">Purchase links for this title are being verified. We will add store options once the correct listings are confirmed.</p>`}`;
+ dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"This title is part of the growing Book Read catalogue. Retailer listings are being checked before purchase links are published.")}</p>${editions.length?`<div class="edition-list">${editions.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price)}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Visit store ↗</a></div>`).join("")}</div>`:`<p class="pending-note">Purchase links for this title are being verified. We will add store options once the correct listings are confirmed.</p>`}<h3 class="store-search-heading">Find this book at more stores</h3><p class="store-search-note">Search these retailers for this title. Availability and format depend on each store.</p><div class="edition-list">${storeSearches.filter(([name])=>book.id!=="architecture-human-nature"||!["Kobo","Google Books"].includes(name)).map(([name,base])=>`<div class="edition"><div><strong>${esc(name)}</strong><small>Search for ${esc(book.title)}</small></div><a href="${base+encodeURIComponent(book.title+" Mathias Simiyu")}" target="_blank" rel="noopener noreferrer">Search store ↗</a></div>`).join("")}</div>`;
  dialog.showModal();
 }
 grid.addEventListener("click",event=>{const card=event.target.closest("[data-id]");if(card)openBook(card.dataset.id)});

@@ -38,7 +38,8 @@
         "format": "Paperback",
         "retailer": "The Nile",
         "price": "See store",
-        "url": "https://www.thenile.com.au/books/mathias-simiyu/fast-easy-simple-and-first-million-dollars/9798233964442"
+        "url": "https://www.thenile.com.au/books/mathias-simiyu/fast-easy-simple-and-first-million-dollars/9798233964442",
+        "isbn": "9798233964442"
       },
       {
         "format": "Paperback",
@@ -145,7 +146,8 @@
         "format": "Paperback",
         "retailer": "Foyles",
         "price": "See store",
-        "url": "https://www.foyles.co.uk/book/last-book/mathias-simiyu/9798235950887"
+        "url": "https://www.foyles.co.uk/book/last-book/mathias-simiyu/9798235950887",
+        "isbn": "9798235950887"
       }
     ],
     "isbn": "9798235950887"
@@ -161,7 +163,8 @@
         "format": "Paperback",
         "retailer": "The Nile",
         "price": "See store",
-        "url": "https://www.thenile.com.au/books/mathias-simiyu/won-in-mind/9798232953423"
+        "url": "https://www.thenile.com.au/books/mathias-simiyu/won-in-mind/9798232953423",
+        "isbn": "9798232953423"
       },
       {
         "format": "Paperback",
@@ -184,7 +187,8 @@
         "format": "Paperback",
         "retailer": "Bookshop.org",
         "price": "See store",
-        "url": "https://bookshop.org/p/books/beyond-labels-mathias-simiyu/91a76b72c9936aee"
+        "url": "https://bookshop.org/p/books/beyond-labels-mathias-simiyu/91a76b72c9936aee",
+        "isbn": "9798233250552"
       },
       {
         "format": "Paperback",
@@ -214,7 +218,8 @@
         "format": "Paperback",
         "retailer": "Readings",
         "price": "See store",
-        "url": "https://www.readings.com.au/product/9798232291518/silent-master--mathias-simiyu--2025--9798232291518"
+        "url": "https://www.readings.com.au/product/9798232291518/silent-master--mathias-simiyu--2025--9798232291518",
+        "isbn": "9798232291518"
       },
       {
         "format": "Paperback",
@@ -237,7 +242,8 @@
         "format": "Paperback",
         "retailer": "Dymocks",
         "price": "See store",
-        "url": "https://www.dymocks.com.au/love-triangle-by-mathias-simiyu-9798235147836"
+        "url": "https://www.dymocks.com.au/love-triangle-by-mathias-simiyu-9798235147836",
+        "isbn": "9798235147836"
       },
       {
         "format": "Paperback",
@@ -260,7 +266,8 @@
         "format": "Paperback",
         "retailer": "Readings",
         "price": "See store",
-        "url": "https://www.readings.com.au/product/9798232496937/optional-death--mathias-simiyu--2025--9798232496937"
+        "url": "https://www.readings.com.au/product/9798232496937/optional-death--mathias-simiyu--2025--9798232496937",
+        "isbn": "9798232496937"
       },
       {
         "format": "Paperback",
@@ -290,7 +297,8 @@
         "format": "Paperback",
         "retailer": "Kinokuniya",
         "price": "See store",
-        "url": "https://usa.kinokuniya.com/ja/products/9798224736928"
+        "url": "https://usa.kinokuniya.com/ja/products/9798224736928",
+        "isbn": "9798224736928"
       }
     ],
     "isbn": "9798224736928"
@@ -306,7 +314,8 @@
         "format": "Paperback",
         "retailer": "Takealot",
         "price": "See store",
-        "url": "https://www.takealot.com/brain-code-patternode/PLID101064345"
+        "url": "https://www.takealot.com/brain-code-patternode/PLID101064345",
+        "isbn": "9798233431555"
       },
       {
         "format": "eBook",
@@ -343,7 +352,8 @@
         "format": "Paperback",
         "retailer": "Hatchards",
         "price": "See store",
-        "url": "https://www.hatchards.co.uk/book/seduction/mathias-simiyu/9798232918507"
+        "url": "https://www.hatchards.co.uk/book/seduction/mathias-simiyu/9798232918507",
+        "isbn": "9798232918507"
       }
     ],
     "isbn": "9798232918507"
@@ -359,13 +369,15 @@
         "format": "Paperback",
         "retailer": "Bookshop.org",
         "price": "See store",
-        "url": "https://bookshop.org/p/books/stay-awake-mathias-simiyu/d26bdc3462496def"
+        "url": "https://bookshop.org/p/books/stay-awake-mathias-simiyu/d26bdc3462496def",
+        "isbn": "9798232441678"
       },
       {
         "format": "Paperback",
         "retailer": "Readings",
         "price": "See store",
-        "url": "https://www.readings.com.au/product/9798232441678/stay-awake--mathias-simiyu--2025--9798232441678"
+        "url": "https://www.readings.com.au/product/9798232441678/stay-awake--mathias-simiyu--2025--9798232441678",
+        "isbn": "9798232441678"
       },
       {
         "format": "eBook (DRM-free)",
@@ -388,13 +400,15 @@
         "format": "Paperback",
         "retailer": "The Nile",
         "price": "See store",
-        "url": "https://www.thenile.com.au/books/mathias-simiyu/the-environment-shape-you/9798232606947"
+        "url": "https://www.thenile.com.au/books/mathias-simiyu/the-environment-shape-you/9798232606947",
+        "isbn": "9798232606947"
       },
       {
         "format": "eBook",
         "retailer": "Rakuten Kobo",
         "price": "See store",
-        "url": "https://books.rakuten.co.jp/rk/97479f2e2bf432db9b8d01411292bb44/"
+        "url": "https://books.rakuten.co.jp/rk/97479f2e2bf432db9b8d01411292bb44/",
+        "isbn": "9798232527389"
       },
       {
         "format": "Paperback",
@@ -417,13 +431,15 @@
         "format": "Paperback",
         "retailer": "Foyles",
         "price": "See store",
-        "url": "https://www.foyles.co.uk/book/before-you-call-her-wife/mathias-simiyu/9798232932794"
+        "url": "https://www.foyles.co.uk/book/before-you-call-her-wife/mathias-simiyu/9798232932794",
+        "isbn": "9798232932794"
       },
       {
         "format": "eBook",
         "retailer": "Rakuten Kobo",
         "price": "See store",
-        "url": "https://books.rakuten.co.jp/rk/628985110f7031bfa0367ce01451d39a/"
+        "url": "https://books.rakuten.co.jp/rk/628985110f7031bfa0367ce01451d39a/",
+        "isbn": "9798232507282"
       }
     ],
     "isbn": "9798232932794"
@@ -439,7 +455,8 @@
         "format": "Paperback",
         "retailer": "Hatchards",
         "price": "See store",
-        "url": "https://www.hatchards.co.uk/book/money/mathias-simiyu/9798232649609"
+        "url": "https://www.hatchards.co.uk/book/money/mathias-simiyu/9798232649609",
+        "isbn": "9798232649609"
       },
       {
         "format": "Paperback",
@@ -462,7 +479,8 @@
         "format": "Paperback",
         "retailer": "Readings",
         "price": "See store",
-        "url": "https://www.readings.com.au/product/9798232109547/humanity-outweigh-materialism--mathias-simiyu--2025--9798232109547"
+        "url": "https://www.readings.com.au/product/9798232109547/humanity-outweigh-materialism--mathias-simiyu--2025--9798232109547",
+        "isbn": "9798232109547"
       },
       {
         "format": "Paperback",
@@ -492,7 +510,8 @@
         "format": "Paperback",
         "retailer": "Tertulia",
         "price": "See store",
-        "url": "https://tertulia.com/book/break-the-chain-mathias-simiyu/9798232421656"
+        "url": "https://tertulia.com/book/break-the-chain-mathias-simiyu/9798232421656",
+        "isbn": "9798232421656"
       },
       {
         "format": "Paperback",
@@ -522,7 +541,8 @@
         "format": "Paperback",
         "retailer": "Readings",
         "price": "See store",
-        "url": "https://www.readings.com.au/product/9798232676568/new-world--mathias-simiyu--2025--9798232676568"
+        "url": "https://www.readings.com.au/product/9798232676568/new-world--mathias-simiyu--2025--9798232676568",
+        "isbn": "9798232676568"
       },
       {
         "format": "Paperback",
@@ -545,7 +565,8 @@
         "format": "Paperback",
         "retailer": "Readings",
         "price": "See store",
-        "url": "https://www.readings.com.au/product/9798232923693/beyond-dimensions--mathias-simiyu--2025--9798232923693"
+        "url": "https://www.readings.com.au/product/9798232923693/beyond-dimensions--mathias-simiyu--2025--9798232923693",
+        "isbn": "9798232923693"
       },
       {
         "format": "Paperback",
@@ -582,7 +603,8 @@
         "format": "Paperback",
         "retailer": "Foyles",
         "price": "See store",
-        "url": "https://www.foyles.co.uk/book/men-resist-death/mathias-simiyu/9798232535278"
+        "url": "https://www.foyles.co.uk/book/men-resist-death/mathias-simiyu/9798232535278",
+        "isbn": "9798232535278"
       }
     ],
     "isbn": "9798232535278"

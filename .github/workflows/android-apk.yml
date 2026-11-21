@@ -58,6 +58,33 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Remove unrelated Android permissions
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          p = Path("android/app/src/main/AndroidManifest.xml")
+          tree = ET.parse(p)
+          root = tree.getroot()
+          android = "{http://schemas.android.com/apk/res/android}"
+          blocked = {
+              "android.permission.CAMERA",
+              "android.permission.RECORD_AUDIO",
+              "android.permission.ACCESS_FINE_LOCATION",
+              "android.permission.ACCESS_COARSE_LOCATION",
+              "android.permission.ACCESS_BACKGROUND_LOCATION",
+          }
+          for node in list(root):
+              if node.tag == "uses-permission" and node.get(android + "name") in blocked:
+                  root.remove(node)
+          tree.write(p, encoding="utf-8", xml_declaration=True)
+          print("Removed unrelated camera, microphone and location permissions.")
+          PY
+          if grep -E 'android.permission.(CAMERA|RECORD_AUDIO|ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|ACCESS_BACKGROUND_LOCATION)' android/app/src/main/AndroidManifest.xml; then
+            echo "Unexpected restricted permission remains"
+            exit 1
+          fi
+
       - name: Build installable debug APK
         run: |
           cd android

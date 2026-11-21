@@ -1,0 +1,9 @@
+{
+  "appId": "com.bookread.app",
+  "appName": "Book Read",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "backgroundColor": "#10131c"
+  }
+}

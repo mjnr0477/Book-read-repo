@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <meta name="description" content="Discover books, explore editions and choose your preferred bookstore.">
+  <title>Book Read — Discover your next read</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Book Read home"><span class="brand-mark">B</span><span>book<span class="brand-light">read</span></span></a>
+    <nav aria-label="Main navigation"><a href="#catalogue">Explore books</a><a href="#about">About</a></nav>
+    <a class="header-cta" href="#catalogue">Browse library <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A library of ideas</p>
+        <h1>Find a book.<br><em>Find a new perspective.</em></h1>
+        <p class="hero-intro">Explore a growing collection of books, compare available editions and choose the bookstore that works for you.</p>
+        <a class="primary-button" href="#catalogue">Explore the collection <span aria-hidden="true">→</span></a>
+        <div class="hero-note"><span class="note-icon">↗</span> Buy securely through the retailer you choose.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="book-stack">
+          <div class="book book-back"><span>IDEAS<br>THAT LAST</span></div>
+          <div class="book book-mid"><span>THE ART<br>OF THINKING</span></div>
+          <div class="book book-front"><small>BOOK READ COLLECTION</small><strong>THE<br>HUMAN<br>STORY</strong><i></i></div>
+        </div>
+        <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span>
+      </div>
+    </section>
+    <section class="catalogue-section" id="catalogue">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Explore the library</h2><p class="section-subtitle">Thought-provoking reads across different subjects.</p></div>
+        <span class="collection-count" id="book-count">Loading collection…</span>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search books or subjects…" autocomplete="off"></label>
+        <div class="filters" role="group" aria-label="Filter books">
+          <button class="filter-button active" data-filter="all">All books</button>
+          <button class="filter-button" data-filter="available">Available to buy</button>
+          <button class="filter-button" data-filter="coming">More listings</button>
+        </div>
+      </div>
+      <div class="book-grid" id="book-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>No books match that search. Try another title or subject.</p>
+    </section>
+    <section class="about-section" id="about">
+      <div class="about-symbol">B.</div>
+      <div><p class="eyebrow">A SIMPLE WAY TO DISCOVER</p><h2>One collection.<br><em>Your choice of bookstore.</em></h2><p>Book Read brings book listings together in one place. When you choose an edition, you'll continue to the retailer's own website to review the details and complete your purchase.</p></div>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="./"><span class="brand-mark">B</span><span>book<span class="brand-light">read</span></span></a><span>Discover something worth reading.</span><span>© <span id="year"></span> Book Read</span></footer>
+  <dialog id="book-dialog" class="book-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Close details">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <script src="./app.js" defer></script>
+</body>
+</html>

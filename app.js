@@ -31,17 +31,17 @@ const retailers=[
  {name:"The Nile",formats:["paperback","hardcover"],search:q=>"https://www.thenile.com.au/search/?q="+q},
  {name:"Dymocks",formats:["paperback","hardcover"],home:"https://www.dymocks.com.au/"},
  {name:"Hatchards",formats:["paperback","hardcover"],home:"https://www.hatchards.co.uk/"},
- {name:"Tertulia",formats:["paperback","hardcover","ebook"],home:"https://tertulia.com/"},
- {name:"Takealot",formats:["paperback","hardcover"],home:"https://www.takealot.com/"},
- {name:"Indigo",formats:["ebook","paperback","hardcover"],home:"https://www.indigo.ca/"},
- {name:"Waterstones",formats:["paperback","hardcover"],home:"https://www.waterstones.com/"},
- {name:"Blackwell's",formats:["paperback","hardcover"],home:"https://blackwells.co.uk/"},
- {name:"Booktopia",formats:["paperback","hardcover"],home:"https://www.booktopia.com.au/"},
- {name:"Text Book Centre (Kenya)",formats:["ebook","paperback","hardcover"],home:"https://textbookcentre.com/shop/"},
+ {name:"Tertulia",formats:["paperback","hardcover","ebook"],search:q=>"https://tertulia.com/search?q="+q},
+ {name:"Takealot",formats:["paperback","hardcover"],search:q=>"https://www.takealot.com/all?qsearch="+q},
+ {name:"Indigo",formats:["ebook","paperback","hardcover"],search:q=>"https://www.indigo.ca/en-ca/search?q="+q},
+ {name:"Waterstones",formats:["paperback","hardcover"],search:q=>"https://www.waterstones.com/books/search/term/"+q},
+ {name:"Blackwell's",formats:["paperback","hardcover"],search:q=>"https://blackwells.co.uk/bookshop/search/?keyword="+q},
+ {name:"Booktopia",formats:["paperback","hardcover"],search:q=>"https://www.booktopia.com.au/search.ep?keywords="+q},
+ {name:"Text Book Centre (Kenya)",formats:["ebook","paperback","hardcover"],search:q=>"https://textbookcentre.com/catalogsearch/result/?q="+q},
  {name:"Bookstop (Kenya)",formats:["paperback","hardcover"],home:"https://bookstop.co.ke/"},
- {name:"Exclusive Books",formats:["paperback","hardcover"],home:"https://exclusivebooks.co.za/"},
+ {name:"Exclusive Books",formats:["paperback","hardcover"],search:q=>"https://exclusivebooks.co.za/search?q="+q},
  {name:"Prestige Bookshop (Kenya)",formats:["paperback","hardcover"],home:"https://prestigebookshop.com/"},
- {name:"Books-A-Million",formats:["paperback","hardcover"],home:"https://www.booksamillion.com/"}
+ {name:"Books-A-Million",formats:["paperback","hardcover"],search:q=>"https://www.booksamillion.com/search?query="+q}
 ];
 const formatNames={all:"All formats",ebook:"eBook",paperback:"Paperback",hardcover:"Hardcover"};
 const esc=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
@@ -49,11 +49,11 @@ function render(){
  const term=search.value.trim().toLowerCase();
  const visible=books.filter(book=>{
   const matches=(book.title+" "+(book.category||"")).toLowerCase().includes(term);
-  const ready=book.status==="available";
+  const ready=(book.editions||[]).length>0;
   return matches&&(activeFilter==="all"||(activeFilter==="available"&&ready)||(activeFilter==="coming"&&!ready));
  });
  count.textContent=visible.length+" "+(visible.length===1?"book":"books");
- grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${book.status==="available"?"ready":""}">${book.status==="available"?"STORE OPTIONS":"STORE LINKS BEING VERIFIED"}</span></div></article>`).join("");
+ grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${book.status==="available"?"ready":""}">${(book.editions||[]).length?"STORE OPTIONS":"FIND RETAILERS"}</span></div></article>`).join("");
  empty.hidden=visible.length>0;
 }
 function formatForEdition(edition){
@@ -68,7 +68,7 @@ function openBook(id){
  selectedFormat="all";
  const editions=book.editions||[];
  const isSelectExclusive=book.id==="architecture-human-nature";
- const universalHtml=book.isbn?`<div class="universal-store-link"><a href="https://booklink.fyi/isbn/${encodeURIComponent(book.isbn)}" target="_blank" rel="noopener noreferrer">See stores for this edition ↗</a><small>One link to a book-specific store and availability page.</small></div>`:"";
+ const universalHtml=book.universalUrl?`<div class="universal-store-link"><a href="${esc(book.universalUrl)}" target="_blank" rel="noopener noreferrer">Choose your bookstore ↗</a><small>Books2Read universal link for this title.</small></div>`:"";
  const directHtml=`${universalHtml}<h3 class="store-search-heading">Direct retailer listings</h3><div class="edition-list" id="direct-editions"></div>`;
  dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"Explore available editions and check each retailer for current price, format and delivery options.")}</p>${directHtml}<h3 class="store-search-heading">Shop this title by format</h3><div class="format-tabs" role="group" aria-label="Choose book format">${Object.entries(formatNames).map(([key,label])=>`<button type="button" class="format-button ${key==="all"?"active":""}" data-format="${key}">${label}</button>`).join("")}</div><p class="store-search-note" id="format-note">Choose a retailer to check its current listing. Search links do not guarantee stock or availability.</p><div class="edition-list" id="retailer-results"></div>${isSelectExclusive?'<p class="select-note">This eBook is enrolled in Kindle Select. Digital-store searches are limited to Amazon while that exclusivity applies; print editions can still be searched at other retailers.</p>':""}`;
  dialogContent.querySelectorAll(".format-button").forEach(button=>button.addEventListener("click",()=>{dialogContent.querySelector(".format-button.active")?.classList.remove("active");button.classList.add("active");selectedFormat=button.dataset.format;renderRetailers(book)}));

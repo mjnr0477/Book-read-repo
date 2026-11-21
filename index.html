@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10131c">
-  <meta name="description" content="Discover books, explore editions and choose your preferred bookstore.">
+  <meta name="description" content="Browse books, view their real covers and descriptions, compare editions, and visit the bookstore you choose.">
   <title>Book Read — Discover your next read</title>
+  <link rel="icon" href="./book-read-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -26,11 +27,7 @@
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="book-stack">
-          <div class="book book-back"><span>IDEAS<br>THAT LAST</span></div>
-          <div class="book book-mid"><span>THE ART<br>OF THINKING</span></div>
-          <div class="book book-front"><small>BOOK READ COLLECTION</small><strong>THE<br>HUMAN<br>STORY</strong><i></i></div>
-        </div>
+        <div class="hero-covers" id="hero-covers" aria-hidden="true"></div>
         <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span>
       </div>
     </section>
@@ -49,7 +46,6 @@
       </div>
       <div class="book-grid" id="book-grid" aria-live="polite"></div>
       <p class="empty-state" id="empty-state" hidden>No books match that search. Try another title or subject.</p>
-      <section class="universal-links-section" aria-labelledby="universal-links-heading"><div class="section-heading"><div><p class="eyebrow">MORE WAYS TO FIND THE BOOKS</p><h2 id="universal-links-heading">Universal book links</h2><p class="section-subtitle">These additional Books2Read links open their own title pages, where readers can see the participating bookstores. They are not yet matched to individual catalogue cards.</p></div></div><div id="universal-links-list" class="edition-list"></div></section>
     </section>
     <section class="about-section" id="about">
       <div class="about-symbol">B.</div>

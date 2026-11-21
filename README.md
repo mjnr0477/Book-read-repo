@@ -1,17 +1,17 @@
 # Book Read
 
-A mobile-first book discovery catalogue. Readers can browse titles, search by title or subject, inspect recorded editions, and open retailer listings or format-specific store searches.
+A mobile-first book discovery catalogue. Readers can browse books, search by title or subject, read verified short descriptions, view retailer jacket images where available, compare recorded editions, and open the bookstore they choose.
 
 ## Features
 
-- Responsive catalogue with title search and category browsing.
-- Book detail pages show recorded direct retailer listings where available.
-- Format-specific shopping: eBook, paperback, hardcover, or all formats.
-- Every catalogue title has retailer-search destinations, including Amazon, AbeBooks, Bookshop.org, Barnes & Noble, Walmart, bol, Kobo, Google Play Books, Apple Books, Google Books, Thalia, Foyles, Readings, Kinokuniya and World of Books.
-- Direct edition links are kept separate from retailer search links.
-- Search links are discovery links only; they do not guarantee that a retailer currently stocks a title or a particular format. The retailer's own page is the source of truth for availability, price, shipping and edition.
-- No payment details are collected by Book Read. Purchases happen on the retailer's website.
-- The app does not display the catalogue owner's personal name.
+- Responsive catalogue with text search across titles, subjects, descriptions, ISBNs and listed retailers.
+- Real cover images sourced from the associated publisher/retailer product pages where verified; typographic fallbacks are used when no reliable jacket image is available.
+- Book details include the verified title description, any matched Books2Read Universal Book Links, and recorded retailer product pages.
+- Format-specific shopping for eBooks, paperbacks and hardcovers.
+- Direct product destinations are visually separated from retailer search fallbacks.
+- Retailer search links are discovery links only; they do not prove that a specific edition is in stock.
+- Book Read does not collect payment details. Readers complete purchases on the chosen retailer's website.
+- Catalogue ISBN-13 values are checked for valid check digits by the catalogue test.
 
 ## Run locally
 
@@ -23,18 +23,29 @@ python -m http.server 8080
 
 Then open `http://localhost:8080`.
 
-## Deploy
+## Validate catalogue
 
-This is a static site and can be deployed from the repository root using GitHub Pages or another static hosting provider. No server secrets or database are required for the catalogue.
+Run:
+
+```sh
+npm test
+```
+
+This checks catalogue JSON, unique book IDs, retailer URLs, ISBN-13 check digits, Kindle Select link restrictions and the matched Books2Read links.
 
 ## Android packaging
 
-The website can be packaged using Capacitor. The Android wrapper should bundle the website locally rather than merely opening a remote URL.
+The website can be packaged using Capacitor. The `build:web` step copies the HTML, JavaScript, CSS, catalogue and icon into the local `www/` bundle before Android sync.
+
+```sh
+npm run build:web
+npm run android:sync
+```
 
 ## Catalogue maintenance
 
-Edit `books.json`. For each title, add only verified direct retailer URLs and edition details. Use the `editions` array for confirmed listing destinations; do not label a retailer search as a direct listing. Include ISBN-13 identifiers when available so print editions can be matched accurately.
+Edit `books.json`. Add only source-backed book descriptions, official jacket image URLs, valid ISBN-13 identifiers and exact product pages. Add a Books2Read URL only to its matching book's `universalUrls` array. Keep retailer search links as search destinations, not product listings.
 
-## Publishing and ebook exclusivity
+## Availability and exclusivity
 
-Before publishing direct digital sales links, check the relevant ebook's distribution and exclusivity terms. A title enrolled in KDP Select must not be offered as a digital ebook through competing stores during its enrolment. Print editions may be listed separately where the publisher permits it.
+Retailer pages control their own prices, stock, edition details and shipping; Book Read does not guarantee retailer availability. The eBook for *The Architecture of Human Nature* is treated as Kindle Select exclusive and is not linked to competing digital stores while that exclusivity applies. Print editions are handled separately.

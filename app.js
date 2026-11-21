@@ -53,7 +53,7 @@ function render(){
   return matches&&(activeFilter==="all"||(activeFilter==="available"&&ready)||(activeFilter==="coming"&&!ready));
  });
  count.textContent=visible.length+" "+(visible.length===1?"book":"books");
- grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${book.status==="available"?"ready":""}">${(book.editions||[]).length?"STORE OPTIONS":"FIND RETAILERS"}</span></div></article>`).join("");
+ grid.innerHTML=visible.map(book=>`<article class="book-card" tabindex="0" role="button" aria-label="View ${esc(book.title)}" data-id="${esc(book.id)}"><div class="cover ${esc(book.cover||"blue")}"><span class="cover-title">${esc(book.title)}</span><span class="cover-label">BOOK READ COLLECTION</span></div><div class="book-info"><h3>${esc(book.title)}</h3><div class="book-meta">${esc(book.category||"Book")}</div><span class="book-status ${(book.editions||[]).length?"ready":""}">${(book.editions||[]).length?"STORE LINKS":"FIND RETAILERS"}</span></div></article>`).join("");
  empty.hidden=visible.length>0;
 }
 function formatForEdition(edition){
@@ -69,7 +69,7 @@ function openBook(id){
  const editions=book.editions||[];
  const isSelectExclusive=book.id==="architecture-human-nature";
  const universalHtml=book.universalUrl?`<div class="universal-store-link"><a href="${esc(book.universalUrl)}" target="_blank" rel="noopener noreferrer">Choose your bookstore ↗</a><small>Books2Read universal link for this title.</small></div>`:"";
- const directHtml=`${universalHtml}<h3 class="store-search-heading">Direct retailer listings</h3><div class="edition-list" id="direct-editions"></div>`;
+ const directHtml=`${universalHtml}<h3 class="store-search-heading">Book-specific retailer listings</h3><div class="edition-list" id="direct-editions"></div>`;
  dialogContent.innerHTML=`<p class="eyebrow">${esc(book.category||"BOOK DETAILS")}</p><h2 class="dialog-title">${esc(book.title)}</h2><p class="dialog-description">${esc(book.description||"Explore available editions and check each retailer for current price, format and delivery options.")}</p>${directHtml}<h3 class="store-search-heading">Shop this title by format</h3><div class="format-tabs" role="group" aria-label="Choose book format">${Object.entries(formatNames).map(([key,label])=>`<button type="button" class="format-button ${key==="all"?"active":""}" data-format="${key}">${label}</button>`).join("")}</div><p class="store-search-note" id="format-note">Choose a retailer to check its current listing. Search links do not guarantee stock or availability.</p><div class="edition-list" id="retailer-results"></div>${isSelectExclusive?'<p class="select-note">This eBook is enrolled in Kindle Select. Digital-store searches are limited to Amazon while that exclusivity applies; print editions can still be searched at other retailers.</p>':""}`;
  dialogContent.querySelectorAll(".format-button").forEach(button=>button.addEventListener("click",()=>{dialogContent.querySelector(".format-button.active")?.classList.remove("active");button.classList.add("active");selectedFormat=button.dataset.format;renderRetailers(book)}));
  renderRetailers(book);
@@ -80,7 +80,7 @@ function renderRetailers(book){
  const directResults=dialogContent.querySelector("#direct-editions");
  if(!results||!directResults)return;
  const direct=(book.editions||[]).filter(e=>selectedFormat==="all"||formatForEdition(e)===selectedFormat);
- directResults.innerHTML=direct.length?direct.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${esc(e.price||"See store")}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></div>`).join(""):`<p class="pending-note">No direct listing for this format is recorded yet. Use the retailer searches below to check current availability.</p>`;
+ directResults.innerHTML=direct.length?direct.map(e=>`<div class="edition"><div><strong>${esc(e.format)}</strong><small>${esc(e.retailer)} · ${e.isbn?"ISBN "+esc(e.isbn):"Check current price and availability on store page"}</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Open store page ↗</a></div>`).join(""):`<p class="pending-note">No book-specific store page is recorded for this format yet. Use the retailer searches below to look for it.</p>`;
  const formats=selectedFormat==="all"?["ebook","paperback","hardcover"]:[selectedFormat];
  const entries=[];
  for(const format of formats){
@@ -91,7 +91,7 @@ function renderRetailers(book){
   }
  }
  // Keep each store visible once per format, so users can compare edition-specific results.
- results.innerHTML=entries.map(item=>`<div class="edition retailer-result"><div><strong>${esc(item.name)}</strong><small>${esc(formatNames[item.format])} · ${item.searchable?"title search":"official store homepage; search title there"}</small></div><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${item.searchable?"Search title":"Visit store"} ↗</a></div>`).join("");
+ results.innerHTML=entries.map(item=>`<div class="edition retailer-result"><div><strong>${esc(item.name)}</strong><small>${esc(formatNames[item.format])} · ${item.searchable?"title search; stock not confirmed":"official store homepage; search title there"}</small></div><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${item.searchable?"Search title":"Visit store"} ↗</a></div>`).join("");
 }
 grid.addEventListener("click",event=>{const card=event.target.closest("[data-id]");if(card)openBook(card.dataset.id)});
 grid.addEventListener("keydown",event=>{if((event.key==="Enter"||event.key===" ")&&event.target.matches("[data-id]")){event.preventDefault();openBook(event.target.dataset.id)}});
